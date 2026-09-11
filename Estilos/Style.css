@@ -1,0 +1,469 @@
+    /* =========================
+    CONFIGURACIÓN GENERAL
+    ========================= */
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #102f5e;
+    }
+
+    /* =========================
+    NAVBAR
+    ========================= */
+
+    .nav {
+    width: 100%;
+    height: 68px;
+    background: white;
+    border-bottom: 1px solid #e5eaf2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    order: -1;
+    }
+
+    .nav ul {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 38px;
+    }
+
+    .nav li a {
+    text-decoration: none;
+    color: #536b8d;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s;
+    }
+
+    .nav li a:hover {
+    color: #1769e0;
+    }
+
+    /* =========================
+    HERO
+    ========================= */
+
+    .hero {
+    min-height: 365px;
+    padding: 55px 8%;
+
+    background:
+        radial-gradient(
+        circle at 80% 50%,
+        rgba(207, 226, 255, 0.9),
+        transparent 40%
+        ),
+        linear-gradient(110deg, #f2f8ff, #e8f2ff);
+
+    position: relative;
+    overflow: hidden;
+    }
+
+    /* Decoraciones del fondo */
+
+    .hero::before {
+    content: "";
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -150px;
+    top: -200px;
+
+    background: #dbeaff;
+    border-radius: 50%;
+
+    opacity: 0.7;
+    }
+
+    .hero::after {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: 250px;
+    bottom: -210px;
+
+    background: #dcecff;
+    border-radius: 50%;
+
+    opacity: 0.7;
+    }
+
+    .hero h1 {
+    position: relative;
+    z-index: 2;
+
+    width: 550px;
+
+    font-size: 43px;
+    line-height: 1.08;
+
+    font-weight: 750;
+
+    color: #102f5e;
+
+    margin-bottom: 20px;
+    }
+
+    /* Parte azul del título */
+
+    .hero h1::first-line {
+    color: #1769e0;
+    }
+
+    .hero p {
+    position: relative;
+    z-index: 2;
+
+    width: 500px;
+
+    color: #607795;
+    font-size: 15px;
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+    }
+
+    /* =========================
+    BOTONES
+    ========================= */
+
+    .hero button,
+    .card-abajo-1 button,
+    .card-abajo-2 button {
+    position: relative;
+    z-index: 3;
+
+    border-radius: 25px;
+
+    padding: 13px 25px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+    }
+
+    .hero button {
+    background: #1769e0;
+    border: 2px solid #1769e0;
+    }
+
+    .hero button + button {
+    background: white;
+    border: 2px solid #1769e0;
+    margin-left: 12px;
+    }
+
+    .hero button a,
+    .card-abajo-1 button a,
+    .card-abajo-2 button a {
+    text-decoration: none;
+    }
+
+    .hero button a {
+    color: white;
+    }
+
+    .hero button + button a {
+    color: #1769e0;
+    }
+
+    .hero button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(23, 105, 224, 0.2);
+    }
+
+    /* =========================
+    SECCIÓN PRINCIPAL
+    ========================= */
+
+    .S-principal {
+    padding: 45px 5.5% 60px;
+    }
+
+    .S-principal h2 {
+    font-size: 30px;
+    color: #102f5e;
+
+    margin-bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    }
+
+    .S-principal h2::after {
+    content: "";
+
+    width: 80px;
+    height: 2px;
+
+    background: #7da8e8;
+    }
+
+    /* =========================
+    CARDS
+    ========================= */
+
+    .cards-Inicio {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 15px;
+    }
+
+    .card-I {
+    min-height: 220px;
+
+    background: white;
+
+    border: 1px solid #e2eaf5;
+
+    border-radius: 8px;
+
+    padding: 25px 28px;
+
+    box-shadow: 0 5px 18px rgba(34, 76, 130, 0.06);
+
+    transition: 0.25s;
+
+    display: flex;
+    flex-direction: column;
+    }
+
+    .card-I:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 28px rgba(34, 76, 130, 0.12);
+
+    border-color: #b9d3f5;
+    }
+
+    /* Iconos */
+
+    .card-I img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+
+    background: #e9f2ff;
+    border-radius: 25%;
+
+    padding: 10px;
+
+    margin-bottom: 17px;
+    }
+
+    /* Títulos */
+
+    .card-I h3 {
+    font-size: 17px;
+    line-height: 1.25;
+
+    color: #102f5e;
+
+    margin-bottom: 10px;
+    }
+
+    /* Texto */
+
+    .card-I p {
+    color: #6c7f9b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+    }
+
+    /* Link */
+
+    .card-I a {
+    margin-top: auto;
+
+    text-decoration: none;
+
+    color: #1769e0;
+
+    font-size: 13px;
+    font-weight: bold;
+    }
+
+    .card-I a::after {
+    content: " →";
+
+    font-size: 17px;
+    }
+
+    /* =========================
+    TARJETAS INFERIORES
+    ========================= */
+
+    .cards-abajo {
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+    }
+
+    /* Primera tarjeta */
+
+    .card-abajo-1,
+    .card-abajo-2 {
+    min-height: 155px;
+
+    border-radius: 12px;
+
+    padding: 30px 40px;
+
+    position: relative;
+
+    overflow: hidden;
+    }
+
+    /* Comparador */
+
+    .card-abajo-1 {
+    background: linear-gradient(110deg, #eef6ff, #e5f0ff);
+    }
+
+    /* Encuesta */
+
+    .card-abajo-2 {
+    background: linear-gradient(110deg, #f0f7ff, #e8f2ff);
+    }
+
+    /* Textos */
+
+    .card-abajo-1 h3,
+    .card-abajo-2 h3 {
+    font-size: 18px;
+
+    color: #103566;
+
+    margin-bottom: 9px;
+    }
+
+    .card-abajo-1 p,
+    .card-abajo-2 p {
+    width: 65%;
+
+    color: #69809e;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 18px;
+    }
+
+    /* Botones */
+
+    .card-abajo-1 button,
+    .card-abajo-2 button {
+    padding: 10px 20px;
+
+    background: #1769e0;
+
+    border: none;
+    }
+
+    .card-abajo-1 button a,
+    .card-abajo-2 button a {
+    color: white;
+
+    font-size: 13px;
+    }
+
+    /* =========================
+    CORRECCIÓN DEL HTML
+    ========================= */
+
+    /*
+    Tu HTML tiene los elementos de las tarjetas inferiores
+    fuera de sus respectivos div.
+
+    Esto hace que visualmente podamos acomodarlos.
+    */
+
+    .cards-abajo {
+    position: relative;
+    }
+
+    /* =========================
+    RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1100px) {
+    .nav ul {
+        gap: 20px;
+    }
+
+    .cards-Inicio {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+    }
+
+    @media (max-width: 750px) {
+    .nav {
+        height: auto;
+        padding: 20px;
+    }
+
+    .nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 45px 7%;
+    }
+
+    .hero h1 {
+        width: 100%;
+        font-size: 34px;
+    }
+
+    .hero p {
+        width: 100%;
+    }
+
+    .cards-Inicio {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-abajo {
+        grid-template-columns: 1fr;
+    }
+    }
