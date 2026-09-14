@@ -1,6 +1,16 @@
-    /* =========================
-    CONFIGURACIÓN GENERAL
-    ========================= */
+:root{
+    /* CSS HEX */
+--deep-twilight: #03045eff;
+--french-blue: #023e8aff;
+--bright-teal-blue: #0077b6ff;
+--blue-green: #0096c7ff;
+--turquoise-surf: #00b4d8ff;
+--sky-aqua: #48cae4ff;
+--frosted-blue: #90e0efff;
+--frosted-blue-2: #ade8f4ff;
+--light-cyan: #caf0f8ff;
+
+}
 
     * {
     margin: 0;
@@ -11,7 +21,7 @@
     body {
     font-family: Arial, Helvetica, sans-serif;
     background: #ffffff;
-    color: #102f5e;
+    color: var(--deep-twilight);
     }
 
     /* =========================
@@ -27,9 +37,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     order: -1;
     }
+
+    .logo {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    }
+
 
     .nav ul {
     list-style: none;
@@ -43,7 +62,7 @@
 
     .nav li a {
     text-decoration: none;
-    color: #536b8d;
+    color: var(--blue-green);
     font-size: 14px;
     font-weight: 500;
 
@@ -51,7 +70,7 @@
     }
 
     .nav li a:hover {
-    color: #1769e0;
+    color: var(--bright-teal-blue);
     }
 
     /* Hamburger Menu Toggle */
@@ -68,7 +87,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background: #102f5e;
+    background: var(--deep-twilight);
     border-radius: 2px;
     transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -98,10 +117,10 @@
     background:
         radial-gradient(
         circle at 80% 50%,
-        rgba(207, 226, 255, 0.9),
+        var(--frosted-blue),
         transparent 40%
         ),
-        linear-gradient(110deg, #f2f8ff, #e8f2ff);
+        linear-gradient(110deg, var(--light-cyan), var(--frosted-blue-2));
 
     position: relative;
     overflow: hidden;
@@ -119,7 +138,7 @@
     right: -150px;
     top: -200px;
 
-    background: #dbeaff;
+    background: var(--frosted-blue);
     border-radius: 50%;
 
     opacity: 0.7;
@@ -135,7 +154,7 @@
     right: 250px;
     bottom: -210px;
 
-    background: #dcecff;
+    background: var(--frosted-blue-2);
     border-radius: 50%;
 
     opacity: 0.7;
@@ -152,7 +171,7 @@
 
     font-weight: 750;
 
-    color: #102f5e;
+    color: var(--deep-twilight);
 
     margin-bottom: 20px;
     }
@@ -160,7 +179,7 @@
     /* Parte azul del título */
 
     .hero h1::first-line {
-    color: #1769e0;
+    color: var(--bright-teal-blue);
     }
 
     .hero p {
@@ -169,7 +188,7 @@
 
     width: 500px;
 
-    color: #607795;
+    color: var(--french-blue);
     font-size: 15px;
     line-height: 1.6;
 
@@ -198,13 +217,13 @@
     }
 
     .hero button {
-    background: #1769e0;
-    border: 2px solid #1769e0;
+    background: var(--bright-teal-blue);
+    border: 2px solid var(--bright-teal-blue);
     }
 
     .hero button + button {
     background: white;
-    border: 2px solid #1769e0;
+    border: 2px solid var(--bright-teal-blue);
     margin-left: 12px;
     }
 
@@ -219,7 +238,7 @@
     }
 
     .hero button + button a {
-    color: #1769e0;
+    color: var(--bright-teal-blue);
     }
 
     .hero button:hover {
@@ -237,7 +256,7 @@
 
     .S-principal h2 {
     font-size: 30px;
-    color: #102f5e;
+    color: var(--deep-twilight);
 
     margin-bottom: 35px;
 
@@ -252,7 +271,7 @@
     width: 80px;
     height: 2px;
 
-    background: #7da8e8;
+    background: var(--sky-aqua);
     }
 
     /* =========================
@@ -272,13 +291,13 @@
 
     background: white;
 
-    border: 1px solid #e2eaf5;
+    border: 1px solid var(--light-cyan);
 
     border-radius: 8px;
 
     padding: 25px 28px;
 
-    box-shadow: 0 5px 18px rgba(34, 76, 130, 0.06);
+    box-shadow: 0 5px 18px rgba(3, 4, 94, 0.06);
 
     transition: 0.25s;
 
@@ -289,9 +308,9 @@
     .card-I:hover {
     transform: translateY(-5px);
 
-    box-shadow: 0 12px 28px rgba(34, 76, 130, 0.12);
+    box-shadow: 0 12px 28px rgba(3, 4, 94, 0.12);
 
-    border-color: #b9d3f5;
+    border-color: var(--frosted-blue);
     }
 
     /* Iconos */
@@ -302,7 +321,7 @@
 
     object-fit: contain;
 
-    background: #e9f2ff;
+    background: var(--light-cyan);
     border-radius: 25%;
 
     padding: 10px;
@@ -316,7 +335,7 @@
     font-size: 17px;
     line-height: 1.25;
 
-    color: #102f5e;
+    color: var(--deep-twilight);
 
     margin-bottom: 10px;
     }
@@ -324,7 +343,7 @@
     /* Texto */
 
     .card-I p {
-    color: #6c7f9b;
+    color: var(--blue-green);
 
     font-size: 13px;
 
@@ -340,7 +359,7 @@
 
     text-decoration: none;
 
-    color: #1769e0;
+    color: var(--bright-teal-blue);
 
     font-size: 13px;
     font-weight: bold;
@@ -355,6 +374,99 @@
     /* =========================
     TARJETAS INFERIORES
     ========================= */
+
+    /* Estilos para la página de Calidad */
+    .comparison-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .standard-box {
+        background: white;
+        border: 1px solid var(--light-cyan);
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(3, 4, 94, 0.05);
+        transition: 0.3s;
+    }
+
+    .standard-box:hover {
+        transform: translateY(-5px);
+        border-color: var(--bright-teal-blue);
+    }
+
+    .standard-box h3 {
+        color: var(--deep-twilight);
+        margin-bottom: 15px;
+        font-size: 22px;
+        border-bottom: 2px solid var(--sky-aqua);
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .standard-box p {
+        color: var(--blue-green);
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .standard-box ul {
+        list-style: none;
+    }
+
+    .standard-box ul li {
+        margin-bottom: 10px;
+        color: var(--deep-twilight);
+        font-size: 14px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .standard-box ul li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--bright-teal-blue);
+        font-weight: bold;
+    }
+
+    .table-container {
+        margin-top: 40px;
+        overflow-x: auto;
+    }
+
+    .table-container h3 {
+        color: var(--deep-twilight);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .comparison-table th, .comparison-table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid var(--light-cyan);
+    }
+
+    .comparison-table th {
+        background-color: var(--bright-teal-blue);
+        color: white;
+        font-weight: bold;
+    }
+
+    .comparison-table tr:hover {
+        background-color: var(--light-cyan);
+    }
 
     .cards-abajo {
     margin-top: 30px;
@@ -384,13 +496,13 @@
     /* Comparador */
 
     .card-abajo-1 {
-    background: linear-gradient(110deg, #eef6ff, #e5f0ff);
+    background: linear-gradient(110deg, var(--light-cyan), var(--frosted-blue-2));
     }
 
     /* Encuesta */
 
     .card-abajo-2 {
-    background: linear-gradient(110deg, #f0f7ff, #e8f2ff);
+    background: linear-gradient(110deg, var(--light-cyan), var(--frosted-blue-2));
     }
 
     /* Textos */
@@ -399,7 +511,7 @@
     .card-abajo-2 h3 {
     font-size: 18px;
 
-    color: #103566;
+    color: var(--deep-twilight);
 
     margin-bottom: 9px;
     }
@@ -408,7 +520,7 @@
     .card-abajo-2 p {
     width: 65%;
 
-    color: #69809e;
+    color: var(--blue-green);
 
     font-size: 13px;
 
@@ -423,7 +535,7 @@
     .card-abajo-2 button {
     padding: 10px 20px;
 
-    background: #1769e0;
+    background: var(--bright-teal-blue);
 
     border: none;
     }
@@ -435,16 +547,6 @@
     font-size: 13px;
     }
 
-    /* =========================
-    CORRECCIÓN DEL HTML
-    ========================= */
-
-    /*
-    Tu HTML tiene los elementos de las tarjetas inferiores
-    fuera de sus respectivos div.
-
-    Esto hace que visualmente podamos acomodarlos.
-    */
 
     .cards-abajo {
     position: relative;
@@ -472,7 +574,7 @@
     .nav {
         height: 68px;
         padding: 0 20px;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .hamburger {
