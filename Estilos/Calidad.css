@@ -1,0 +1,50 @@
+.bg-light-cyan-soft {
+            background-color: var(--light-cyan);
+            opacity: 0.6;
+        }
+        .testing-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        .flow-step {
+            background: white;
+            border: 2px solid var(--sky-aqua);
+            border-radius: 50px;
+            padding: 15px 25px;
+            transition: 0.3s;
+            cursor: default;
+            color: var(--deep-twilight);
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 150px;
+        }
+        .flow-step:hover {
+            background: var(--sky-aqua);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 180, 216, 0.3);
+        }
+        .herramientas {
+            background: var(--bright-teal-blue);
+            color: white;
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .iso-comparison {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 5px solid var(--bright-teal-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
