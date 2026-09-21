@@ -1,50 +1,89 @@
-.bg-light-cyan-soft {
-            background-color: var(--light-cyan);
-            opacity: 0.6;
-        }
-        .testing-flow {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 40px 0;
-        }
-        .flow-step {
-            background: white;
-            border: 2px solid var(--sky-aqua);
-            border-radius: 50px;
-            padding: 15px 25px;
-            transition: 0.3s;
-            cursor: default;
-            color: var(--deep-twilight);
-            font-weight: 600;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            flex: 1;
-            min-width: 150px;
-        }
-        .flow-step:hover {
-            background: var(--sky-aqua);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 180, 216, 0.3);
-        }
-        .herramientas {
-            background: var(--bright-teal-blue);
-            color: white;
-            font-size: 10px;
-            padding: 2px 8px;
-            border-radius: 10px;
-            text-transform: uppercase;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-        .iso-comparison {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            border-left: 5px solid var(--bright-teal-blue);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
+    .bg-light-cyan-soft {
+    background-color: var(--light-cyan);
+    opacity: 0.6;
+    }
+    .testing-flow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    }
+    .flow-step {
+    background: white;
+    border: 2px solid var(--sky-aqua);
+    border-radius: 50px;
+    padding: 15px 25px;
+    transition: 0.3s;
+    cursor: default;
+    color: var(--deep-twilight);
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 150px;
+    }
+    .flow-step:hover {
+    background: var(--sky-aqua);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 180, 216, 0.3);
+    }
+    .herramientas {
+    background: var(--bright-teal-blue);
+    color: white;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 8px;
+    }
+    .iso-comparison {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    border-left: 5px solid var(--bright-teal-blue);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .accordion {
+    --bs-accordion-color: var(--deep-twilight);
+    --bs-accordion-bg: transparent;
+    --bs-accordion-border-color: var(--bright-teal-blue);
+
+
+    --bs-accordion-btn-color: #ffffff;
+    --bs-accordion-btn-bg: var(--french-blue);
+
+    
+    --bs-accordion-active-color: #ffffff;
+    --bs-accordion-active-bg: var(--deep-twilight);
+
+    
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(0, 180, 216, 0.4);
+    }
+
+
+    .accordion-button:hover {
+    background-color: var(--bright-teal-blue);
+    color: #ffffff;
+    }
+
+    .accordion-body {
+    background-color: var(--light-cyan);
+    color: var(--deep-twilight);
+    border-left: 4px solid var(--turquoise-surf);
+    }
+
+    .accordion-button i {
+    color: var(--frosted-blue-2);
+    }
+    .accordion-button:not(.collapsed) i {
+    color: var(--sky-aqua);
+    }
