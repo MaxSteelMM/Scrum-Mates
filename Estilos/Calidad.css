@@ -24,6 +24,23 @@
     flex: 1;
     min-width: 150px;
     }
+    .Caja-standard {
+    background:  var(--light-cyan);
+    padding: 20px;
+    border-radius: 15px;    
+    height: 100%;
+
+    }
+
+
+    .Caja-standard-ojo {
+    background:  var(--sky-aqua);
+    border-radius: 15px;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    height: 100%;
+}
+
     .flow-step:hover {
     background: var(--sky-aqua);
     color: white;
