@@ -31,6 +31,90 @@
     height: 100%;
 
     }
+    .comparison-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 50%;
+    height: 320px;
+    
+}
+
+.gkit-block__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Al agregar la clase .flip, gira 180 grados */
+.gkit-block__inner.flip {
+    transform: rotateY(180deg);
+}
+
+.gkit-block__front,
+.gkit-block__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gkit-block__front {
+    background-color: var(--french-blue);
+    color: #ffffff;
+}
+
+.gkit-block__back {
+    background-color: var(--deep-twilight);
+    color: #ffffff;
+    transform: rotateY(180deg); /* arranca "al revés" para que al girar quede al derecho */
+}
+
+.gkit-block__back ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.gkit-block__back ul li {
+    padding: 4px 0;
+    border-bottom: 1px solid var(--bright-teal-blue);
+}
+
+.domain-help,
+.show-front-btn {
+    margin-top: 1rem;
+    background-color: var(--turquoise-surf);
+    border: none;
+    color: #03045e;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.domain-help:hover,
+.show-front-btn:hover {
+    background-color: var(--sky-aqua);
+}
 
 
     .Caja-standard-ojo {
