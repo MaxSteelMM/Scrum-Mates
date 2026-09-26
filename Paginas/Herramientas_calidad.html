@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas de Calidad - SCRUM-Mates</title>
+    <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="stylesheet" href="../Estilos/Herramientas_C.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <img src="/Img/Logo/LOGO-SCRUMATES.svg" alt="Logo" width="25%">
+        </div>
+        <input type="checkbox" id="menu-toggle" style="display: none;">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="HerramientasCalidad.html" class="active-link">Herramientas de calidad</a></li>
+            <li><a href="Procesos.html">Procesos de Desarrollo</a></li>
+            <li><a href="Metodologias.html">Metodologías Ágiles</a></li>
+            <li><a href="Recursos.html">Recursos</a></li>
+            <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <a href="#buscar" class="nav-search" aria-label="Buscar"><i class="bi bi-search"></i></a>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar">
+        <a href="../index.html"><i class="bi bi-house-door-fill"></i></a>
+        <span class="crumb-sep">›</span>
+        <a href="Calidad.html">Calidad del Software</a>
+        <span class="crumb-sep">›</span>
+        <span class="crumb-current">Herramientas de Calidad</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hc-hero">
+        <div class="hc-hero-text">
+            <h1>Herramientas de<br>Calidad del Software</h1>
+            <p>Las herramientas de calidad ayudan a automatizar, simplificar y mejorar notablemente los procesos de desarrollo, permitiendo detectar fallos críticos de forma temprana, mantener un código limpio y garantizar un producto final robusto.</p>
+            <div class="hc-hero-buttons">
+                <a href="#tipos" class="btn-primario"><i class="bi bi-compass"></i> Explorar Herramientas</a>
+                <a href="#guia" class="btn-secundario">Ver Guía de Selección</a>
+            </div>
+        </div>
+        <div class="hc-hero-visual">
+            <div class="hc-mockup">
+                <div class="hc-mockup-bar">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <div class="hc-mockup-body">
+                    <div class="hc-mockup-row">
+                        <div class="hc-mockup-line w-70"></div>
+                        <div class="hc-mockup-line w-40"></div>
+                    </div>
+                    <div class="hc-mockup-charts">
+                        <div class="hc-chart-card">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <div class="hc-chart-card">
+                            <i class="bi bi-bar-chart-fill"></i>
+                        </div>
+                        <div class="hc-chart-card">
+                            <i class="bi bi-pie-chart-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="hc-mockup-tags">
+                    <span class="hc-tag"><i class="bi bi-check-circle-fill" style="color:#2ecc71;"></i> Test Management</span>
+                    <span class="hc-tag"><i class="bi bi-bug-fill" style="color:#16a34a;"></i> Bug Trackers</span>
+                    <span class="hc-tag"><i class="bi bi-lightbulb-fill" style="color:#f59e0b;"></i> Linters</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de herramientas -->
+    <section id="tipos" class="S-principal hc-tipos">
+        <div class="hc-tipos-header">
+            <h2>Tipos de herramientas</h2>
+            <span class="hc-badge">5 Clases</span>
+        </div>
+
+        <div class="hc-grid">
+
+            <div class="hc-card">
+                <div class="hc-icon hc-icon-blue"><i class="bi bi-bug-fill"></i></div>
+                <h3>Bug Trackers</h3>
+                <span class="hc-subtitulo">Gestión de defectos</span>
+                <p>Permiten reportar, organizar y dar seguimiento a los errores encontrados en el software. Facilitan la colaboración del equipo para asegurar que cada incidencia sea resuelta.</p>
+                <span class="hc-etiqueta">HERRAMIENTAS POPULARES</span>
+                <div class="hc-chips">
+                    <span class="hc-chip"><i class="bi bi-dot"></i>Jira</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>Bugzilla</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>Redmine</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>Trello</span>
+                </div>
+                <a href="#" class="hc-link">Ver más sobre Bug Trackers <i class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <div class="hc-card">
+                <div class="hc-icon hc-icon-green"><i class="bi bi-code-slash"></i></div>
+                <h3>Linters</h3>
+                <span class="hc-subtitulo">Análisis de código estático</span>
+                <p>Analizan el código fuente en busca de errores estilísticos, malas prácticas y posibles problemas de seguridad sin necesidad de ejecutarlo. Ayudan a mantener un código limpio.</p>
+                <span class="hc-etiqueta">HERRAMIENTAS POPULARES</span>
+                <div class="hc-chips">
+                    <span class="hc-chip"><i class="bi bi-dot"></i>ESLint</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>PyLint</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>SonarQube</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>StyleLint</span>
+                </div>
+                <a href="#" class="hc-link">Ver más sobre Linters <i class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <div class="hc-card">
+                <div class="hc-icon hc-icon-orange"><i class="bi bi-clipboard2-check-fill"></i></div>
+                <h3>Test Management</h3>
+                <span class="hc-subtitulo">Gestión de planes de prueba</span>
+                <p>Facilitan la planificación, ejecución y seguimiento de pruebas. Permiten organizar casos de prueba, requisitos y resultados, mejorando la trazabilidad de los proyectos.</p>
+                <span class="hc-etiqueta">HERRAMIENTAS POPULARES</span>
+                <div class="hc-chips">
+                    <span class="hc-chip"><i class="bi bi-dot"></i>TestRail</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>Zephyr</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>Xray</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>qTest</span>
+                </div>
+                <a href="#" class="hc-link">Ver más sobre Test Management <i class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <div class="hc-card">
+                <div class="hc-icon hc-icon-purple"><i class="bi bi-search"></i></div>
+                <h3>Análisis de Calidad</h3>
+                <span class="hc-subtitulo">Métricas y reportes de cobertura</span>
+                <p>Permiten evaluar la calidad integral del software a través de informes de cobertura de código, métricas de mantenibilidad, análisis de duplicidad y seguridad.</p>
+                <span class="hc-etiqueta">HERRAMIENTAS POPULARES</span>
+                <div class="hc-chips">
+                    <span class="hc-chip"><i class="bi bi-dot"></i>JaCoCo</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>SonarCloud</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>Lighthouse</span>
+                </div>
+                <a href="#" class="hc-link">Ver más sobre Análisis de Calidad <i class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <div class="hc-card">
+                <div class="hc-icon hc-icon-red"><i class="bi bi-arrow-repeat"></i></div>
+                <h3>CI/CD y Automatización</h3>
+                <span class="hc-subtitulo">Integración y despliegue continuo</span>
+                <p>Automatizan la construcción, pruebas y despliegue del software de forma ágil, reduciendo drásticamente los errores manuales y acelerando la frecuencia de entregas.</p>
+                <span class="hc-etiqueta">HERRAMIENTAS POPULARES</span>
+                <div class="hc-chips">
+                    <span class="hc-chip"><i class="bi bi-dot"></i>Jenkins</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>GitLab CI</span>
+                    <span class="hc-chip"><i class="bi bi-dot"></i>GitHub Actions</span>
+                </div>
+                <a href="#" class="hc-link">Ver más sobre CI/CD <i class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <div class="hc-card hc-card-guia" id="guia">
+                <div class="hc-icon hc-icon-white"><i class="bi bi-star-fill"></i></div>
+                <h3 class="text-white">¿Cómo elegir la herramienta adecuada?</h3>
+                <p class="text-light-90">La mejor herramienta no es siempre la más costosa o popular, sino la que mejor se adapta a los objetivos de calidad y cultura de trabajo de tu equipo.</p>
+                <ul class="hc-checklist">
+                    <li><i class="bi bi-check-circle-fill"></i> Evaluar la compatibilidad con tu stack tecnológico actual</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Considerar la curva de aprendizaje y facilidad de uso</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Revisar el soporte técnico y comunidad de usuarios activa</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Priorizar la facilidad de implementación en entornos locales</li>
+                </ul>
+                <a href="#" class="btn-guia">Ver guía de selección <i class="bi bi-chevron-down"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer style="text-align: center; padding: 40px; color: var(--blue-green); border-top: 1px solid var(--light-cyan);">
+        <p>&copy; 2026 SCRUM-Mates. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

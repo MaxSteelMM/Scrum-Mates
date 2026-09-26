@@ -43,20 +43,20 @@
             <div class="card-I">
                 <i class="bi bi-lightbulb fs-1"></i>
                 <h3>Conceptos Clave</h3>
-                <p>La calidad del software es el grado en que un sistema cumple con los requisitos especificados y las expectativas del usuario final.</p>
-                <a href="#">Saber más →</a>
+                <p>La calidad del software es el grado en que un sistema cumple con los requisitos especificados. Se divide en <strong>QA (Aseguramiento)</strong>, enfocado en prevenir defectos mediante procesos, y <strong>QC (Control)</strong>, orientado a detectar fallos en el producto final.</p>
+                <a href="Herramientas_calidad.html">Explorar herramientas de QA/QC →</a>
             </div>
             <div class="card-I">
                 <i class="bi bi-graph-up-arrow fs-1"></i>
                 <h3>Métricas de Calidad</h3>
-                <p>Mediciones cuantitativas como densidad de defectos, cobertura de código y tiempo medio entre fallos (MTBF).</p>
-                <a href="#">Saber más →</a>
+                <p>Mediciones cuantitativas esenciales: <strong>Densidad de defectos</strong> (errores por línea de código), <strong>Cobertura de código</strong> (% de rutas probadas) y <strong>MTBF</strong> (Tiempo medio entre fallos).</p>
+                <a href="Herramientas_calidad.html#tipos">Ver herramientas de análisis →</a>
             </div>
             <div class="card-I">
                 <i class="bi bi-patch-check fs-1"></i>
                 <h3>Estándares ISO</h3>
-                <p>Marcos internacionales que definen la calidad del producto y el proceso de desarrollo.</p>
-                <a href="#">Saber más →</a>
+                <p>Marcos internacionales que unifican los criterios de calidad, permitiendo que las empresas midan su éxito técnico bajo estándares globales y profesionales.</p>
+                <a href="#">Saber más </a>
             </div>
         </div>
 
@@ -67,17 +67,17 @@
             <div class="gkit-block__front Caja-standard">
                 <h3>ISO 9126</h3>
                 <p>Enfoque clásico centrado en el producto.</p>
-                <button class="domain-help">Ver características →</button>
+                <button class="domain-help">Ver características </button>
             </div>
             <div class="gkit-block__back Caja-standard">
                 <h3>ISO 9126</h3>
-                <ul>
-                    <li>Funcionalidad</li>
-                    <li>Fiabilidad</li>
-                    <li>Usabilidad</li>
-                    <li>Eficiencia</li>
-                    <li>Mantenibilidad</li>
-                    <li>Portabilidad</li>
+                <ul class="small">
+                    <li><strong>Funcionalidad:</strong> Capacidad de cumplir propósitos previstos.</li>
+                    <li><strong>Fiabilidad:</strong> Capacidad de mantener nivel de rendimiento.</li>
+                    <li><strong>Usabilidad:</strong> Facilidad de aprendizaje y uso.</li>
+                    <li><strong>Eficiencia:</strong> Relación entre rendimiento y recursos.</li>
+                    <li><strong>Mantenibilidad:</strong> Facilidad de modificación del código.</li>
+                    <li><strong>Portabilidad:</strong> Capacidad de adaptarse a otros entornos.</li>
                 </ul>
                 <button class="show-front-btn">← Volver</button>
             </div>
@@ -89,17 +89,17 @@
             <div class="gkit-block__front Caja-standard">
                 <h3>ISO 25000 (SQuaRE)</h3>
                 <p>Evolución moderna: Calidad del Software Requirements & Evaluation.</p>
-                <button class="domain-help">Ver características →</button>
+                <button class="domain-help">Ver características </button>
             </div>
             <div class="gkit-block__back Caja-standard">
                 <h3>ISO 25000 (SQuaRE)</h3>
-                <ul>
-                    <li>Adecuación Funcional</li>
-                    <li>Eficiencia de desempeño</li>
-                    <li>Compatibilidad</li>
-                    <li>Usabilidad</li>
-                    <li>Fiabilidad</li>
-                    <li>Seguridad</li>
+                <ul class="small">
+                    <li><strong>Adecuación Funcional:</strong> Cumplimiento de necesidades reales.</li>
+                    <li><strong>Eficiencia de Desempeño:</strong> Optimización de tiempo y recursos.</li>
+                    <li><strong>Compatibilidad:</strong> Interoperabilidad con otros sistemas.</li>
+                    <li><strong>Usabilidad:</strong> Experiencia de usuario intuitiva y eficiente.</li>
+                    <li><strong>Fiabilidad:</strong> Resiliencia y madurez del sistema.</li>
+                    <li><strong>Seguridad:</strong> Protección de datos y control de acceso.</li>
                 </ul>
                 <button class="show-front-btn">← Volver</button>
             </div>
@@ -115,23 +115,35 @@
         <p class="mb-4">El proceso de pruebas se organiza en niveles para detectar errores lo antes posible.</p>
 
         <div class="testing-flow">
-            <div class="flow-step">Pruebas Unitarias</div>
-            <div class="flow-step">Pruebas de Integración</div>
-            <div class="flow-step">Pruebas de Sistema</div>
-            <div class="flow-step">Pruebas de Aceptación</div>
+            <div class="flow-step">
+                <strong>Pruebas Unitarias</strong><br>
+                <small>Validan la unidad más pequeña de código.</small>
+            </div>
+            <div class="flow-step">
+                <strong>Pruebas de Integración</strong><br>
+                <small>Verifican la comunicación entre módulos.</small>
+            </div>
+            <div class="flow-step">
+                <strong>Pruebas de Sistema</strong><br>
+                <small>Evalúan el producto completo y sus requisitos.</small>
+            </div>
+            <div class="flow-step">
+                <strong>Pruebas de Aceptación</strong><br>
+                <small>Validan que el producto cumple lo esperado por el cliente.</small>
+            </div>
         </div>
 
         <div class="row mt-5">
             <div class="col-md-6">
                 <div class="Caja-standard-ojo">
                     <h3><i class="bi bi-eye"></i> Caja Blanca</h3>
-                    <p>Se enfoca en la estructura interna del código. Examina rutas, ciclos y condiciones lógicas.</p>
+                    <p>Se enfoca en la estructura interna del código. Examina rutas, ciclos y condiciones lógicas para asegurar que cada línea de código sea ejecutada y validada correctamente.</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="Caja-standard-ojo">
                     <h3><i class="bi bi-eye-slash"></i> Caja Negra</h3>
-                    <p>Se enfoca en las entradas y salidas. Verifica que el software haga lo que debe hacer sin mirar el código.</p>
+                    <p>Se enfoca en las entradas y salidas. Verifica que el software haga lo que debe hacer según los requisitos del usuario, sin necesidad de conocer la implementación interna.</p>
                 </div>
             </div>
         </div>
@@ -153,8 +165,8 @@
                 data-bs-parent="#accordionHerramientas">
                 <div class="accordion-body">
                     <strong>Jira / TestRail</strong>
-                    <p>Planificación de casos de prueba y seguimiento del ciclo de vida del defecto.</p>
-                    <a href="#">Ver Herramienta →</a>
+                    <p>Uso coordinado para la calidad: <strong>Jira</strong> se utiliza para el seguimiento de defectos (bug tracking) y gestión de tareas, mientras que <strong>TestRail</strong> organiza y gestiona la ejecución de los casos de prueba detallados.</p>
+                    <a href="Herramientas_calidad.html#tipos">Ver en catálogo de herramientas →</a>
                 </div>
             </div>
         </div>
@@ -172,8 +184,8 @@
                 data-bs-parent="#accordionHerramientas">
                 <div class="accordion-body">
                     <strong>SonarQube</strong>
-                    <p>Análisis automático de calidad de código, detección de bugs y vulnerabilidades.</p>
-                    <a href="#">Ver Herramienta →</a>
+                    <p>Líder en <strong>Análisis Estático</strong>: examina el código fuente sin ejecutarlo para detectar "code smells", vulnerabilidades de seguridad y bugs potenciales antes de que lleguen a producción.</p>                
+                    <a href="Herramientas_calidad.html#tipos">Ver en catálogo de herramientas →</a>
                 </div>
             </div>
         </div>
@@ -191,8 +203,8 @@
                 data-bs-parent="#accordionHerramientas">
                 <div class="accordion-body">
                     <strong>Selenium / Cypress</strong>
-                    <p>Automatización de pruebas de interfaz de usuario (UI) y regresiones.</p>
-                    <a href="#">Ver Herramienta →</a>
+                    <p>Especialistas en <strong>Análisis Dinámico</strong>: automatizan la interacción con la interfaz de usuario (UI) para realizar pruebas de regresión masivas y asegurar que nuevas actualizaciones no rompan funciones existentes.</p>
+                    <a href="Herramientas_calidad.html#tipos">Ver en catálogo de herramientas →</a>
                 </div>
             </div>
         </div>
