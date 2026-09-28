@@ -137,10 +137,32 @@
 
 /* Tipos de herramientas */
 .hc-tipos-header{
-    display:flex; align-items:center; gap:12px;
+    display:flex; align-items:center; justify-content: space-between; gap:12px;
     margin-bottom: 30px;
 }
 .hc-tipos-header h2{ margin:0; color: var(--deep-twilight); }
+
+.hc-filter-dropdown {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--frosted-blue-2);
+    background-color: #fff;
+    color: var(--french-blue);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.hc-filter-dropdown:focus {
+    border-color: var(--turquoise-surf);
+}
+
+.hc-hidden {
+    display: none !important;
+}
+
 .hc-badge{
     background: var(--light-cyan);
     color: var(--french-blue);

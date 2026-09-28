@@ -73,11 +73,19 @@
     <section id="tipos" class="S-principal hc-tipos">
         <div class="hc-tipos-header">
             <h2>Tipos de herramientas</h2>
+            <select id="hc-filter" class="hc-filter-dropdown">
+                <option value="all">Todas las herramientas</option>
+                <option value="bugs">Bug Trackers</option>
+                <option value="linters">Linters</option>
+                <option value="management">Test Management</option>
+                <option value="analysis">Análisis de Calidad</option>
+                <option value="cicd">CI/CD y Automatización</option>
+            </select>
         </div>
 
         <div class="hc-grid">
 
-            <div class="hc-card">
+            <div class="hc-card" data-category="bugs">
                 <div class="hc-icon hc-icon-blue"><i class="bi bi-bug-fill"></i></div>
                 <h3>Bug Trackers</h3>
                 <span class="hc-subtitulo">Gestión de defectos</span>
@@ -92,7 +100,7 @@
                 <a href="#" class="hc-link">Ver más sobre Bug Trackers <i class="bi bi-arrow-right"></i></a>
             </div>
 
-            <div class="hc-card">
+            <div class="hc-card" data-category="linters">
                 <div class="hc-icon hc-icon-green"><i class="bi bi-code-slash"></i></div>
                 <h3>Linters</h3>
                 <span class="hc-subtitulo">Análisis de código estático</span>
@@ -171,5 +179,6 @@
     <footer style="text-align: center; padding: 40px; color: var(--blue-green); border-top: 1px solid var(--light-cyan);">
         <p>&copy; 2026 SCRUM-Mates. Todos los derechos reservados.</p>
     </footer>
+    <script src="../JS/Filtro_H_C.js"></script>
 </body>
 </html>
