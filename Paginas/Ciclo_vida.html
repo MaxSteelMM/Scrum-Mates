@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclo de Vida del Software (SDLC) - ScrumMates</title>
+    <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="stylesheet" href="../Estilos/Ciclo_vida.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <img src="../Img/Logo/LOGO-SCRUMATES.svg" alt="Logo" width="25%">
+        </div>
+
+        <input type="checkbox" id="menu-toggle" style="display: none;">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="Calidad.html">Calidad del Software</a></li>
+            <li><a href="Procesos.html">Procesos de Desarrollo</a></li>
+            <li><a href="Metodologias.html">Metodologías Ágiles</a></li>
+            <li><a href="Preguntas.html">Preguntas Frecuentes</a></li>
+            <li><a href="SobreNosotros.html">Sobre Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </div>
+
+    <section class="sdlc-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="Procesos.html">Procesos de desarrollo</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Ciclo de vida del desarrollo del software</li>
+                        </ol>
+                    </nav>
+                    <h1 class="sdlc-title">Ciclo de Vida del <br>Desarrollo de Software <br>(SDLC)</h1>
+                    <p class="sdlc-description">
+                        El SDLC (Software Development Life Cycle) es un marco de trabajo que rige y optimiza el proceso de desarrollo de software en diversas organizaciones. Este marco tiene como objetivo optimizar el tiempo y garantizar que el producto final sea de alta calidad, cumpla con los requisitos del usuario y permita mantenimientos en el tiempo.
+                    </p>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center">
+                    <div class="sdlc-circle-container">
+                        <div class="sdlc-center">
+                            <span>CICLO SDLC</span>
+                        </div>
+                        <div class="sdlc-phase p-requisitos"><i class="bi bi-file-earmark-text"></i><span>Requisitos</span></div>
+                        <div class="sdlc-phase p-diseno"><i class="bi bi-palette"></i><span>Diseño</span></div>
+                        <div class="sdlc-phase p-desarrollo"><i class="bi bi-code-slash"></i><span>Desarrollo</span></div>
+                        <div class="sdlc-phase p-pruebas"><i class="bi bi-bug"></i><span>Pruebas</span></div>
+                        <div class="sdlc-phase p-despliegue"><i class="bi bi-cloud-upload"></i><span>Despliegue</span></div>
+                        <div class="sdlc-phase p-mantenimiento"><i class="bi bi-gear"></i><span>Mantenimiento</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sdlc-interactive">
+        <div class="container text-center">
+            <h2 class="section-subtitle">Conocé cada fase</h2>
+            <div class="phase-explorer">
+                <div class="phase-nav">
+                    <button class="phase-btn active" data-phase="requisitos">Requisitos</button>
+                    <button class="phase-btn" data-phase="diseno">Diseño</button>
+                    <button class="phase-btn" data-phase="desarrollo">Desarrollo</button>
+                    <button class="phase-btn" data-phase="pruebas">Pruebas</button>
+                    <button class="phase-btn" data-phase="despliegue">Despliegue</button>
+                    <button class="phase-btn" data-phase="mantenimiento">Mantenimiento</button>
+                </div>
+                <div class="phase-content-card">
+                    <div class="phase-navigation-controls">
+                        <button id="prev-phase" class="nav-arrow"><i class="bi bi-chevron-left"></i></button>
+                        <button id="next-phase" class="nav-arrow"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                    <div id="phase-content" class="phase-content">
+                        <div class="content-inner">
+                            <div class="content-title">
+                                <h3>Requisitos</h3>
+                                <p>Análisis y definición de necesidades</p>
+                            </div>
+                            <div class="content-body">
+                                <h4>¿Qué se hace en esta etapa?</h4>
+                                <p>Se revisan y analizan los requerimientos del sistema con los usuarios y stakeholders. Se definen los objetivos del proyecto y las funcionalidades que el software debe poseer.</p>
+                                <ul>
+                                    <li>Análisis de requerimientos</li>
+                                    <li>Definición de alcance</li>
+                                    <li>Especificaciones técnicas</li>
+                                    <li>Validación con el cliente</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sdlc-steps">
+        <div class="container text-center">
+            <h2 class="section-subtitle">Las 6 etapas, conectadas de principio a fin</h2>
+            <p class="text-muted mb-5">Cada etapa alimenta a la siguiente. Al llegar al mantenimiento, los aprendizajes y nuevas necesidades reinician el proceso.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon"><i class="bi bi-file-earmark-text"></i></div>
+                    <h4>Requisitos</h4>
+                    <p>Se definen las necesidades del usuario y los objetivos del sistema.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class="bi bi-palette"></i></div>
+                    <h4>Diseño</h4>
+                    <p>Se define la arquitectura del software y la interfaz de usuario.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class="bi bi-code-slash"></i></div>
+                    <h4>Desarrollo</h4>
+                    <p>Se escribe el código fuente siguiendo el diseño establecido.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class="bi bi-bug"></i></div>
+                    <h4>Pruebas</h4>
+                    <p>Se verifica que el sistema funcione correctamente y sin errores.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class="bi bi-cloud-upload"></i></div>
+                    <h4>Despliegue</h4>
+                    <p>El software se instala en el entorno de producción para el usuario.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class="bi bi-gear"></i></div>
+                    <h4>Mantenimiento</h4>
+                    <p>Se corrigen errores y se añaden mejoras basadas en el uso real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="sdlc-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h3>El ciclo vuelve a comenzar</h3>
+                    <p>Con el tiempo, el software evoluciona. Los nuevos requerimientos y el feedback del usuario reinician el ciclo para una mejora continua.</p>
+                </div>
+                <div class="banner-actions">
+                    <button class="btn-banner">Reiniciar Ciclo</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const phaseData = {
+            requisitos: {
+                title: "Requisitos",
+                subtitle: "Análisis y definición de necesidades",
+                body: "Esta es la fase más crítica del proyecto. Aquí se establece la base de todo el desarrollo. El objetivo es entender exactamente qué necesita el cliente y cuáles son las restricciones del sistema. Se realizan entrevistas, encuestas y talleres de trabajo para evitar malentendidos que podrían costar miles de dólares en etapas avanzadas.",
+                list: [
+                    "Análisis de requerimientos funcionales y no funcionales",
+                    "Definición de alcance y límites del proyecto",
+                    "Creación del Documento de Especificaciones (SRS)",
+                    "Validación y firma de aceptación con el cliente",
+                    "Análisis de viabilidad técnica y económica",
+                    "Identificación de stakeholders clave"
+                ]
+            },
+            diseno: {
+                title: "Diseño",
+                subtitle: "Arquitectura y experiencia de usuario",
+                body: "Aquí transformamos los requisitos en un plano técnico. No se trata solo de colores, sino de cómo se organizan los datos y cómo se comunican los módulos. Se decide si se usará una arquitectura de microservicios o monolítica, y se define el esquema de la base de datos para asegurar la escalabilidad.",
+                list: [
+                    "Diseño de Arquitectura de Software (High-Level Design)",
+                    "Modelado de Datos y Diagramas ER",
+                    "Creación de Wireframes y Prototipos de alta fidelidad (UI/UX)",
+                    "Definición de contratos de API y flujos de comunicación",
+                    "Planificación de la estrategia de seguridad",
+                    "Selección del stack tecnológico"
+                ]
+            },
+            desarrollo: {
+                title: "Desarrollo",
+                subtitle: "Construcción del producto",
+                body: "Es la etapa de ejecución donde los diseñadores y arquitectos dan paso a los programadores. Se escribe el código siguiendo estándares de calidad y patrones de diseño. Se trabaja en sprints (si es ágil) entregando incrementos de software funcionales y probados continuamente.",
+                list: [
+                    "Codificación siguiendo estándares de calidad",
+                    "Implementación de lógica de negocio",
+                    "Gestión de versiones mediante Git (Gitflow)",
+                    "Revisiones de código (Code Reviews) entre pares",
+                    "Integración continua de módulos",
+                    "Documentación técnica del código"
+                ]
+            },
+            pruebas: {
+                title: "Pruebas",
+                subtitle: "Control de calidad y validación",
+                body: "El software no se lanza sin ser probado. En esta fase, el equipo de QA (Quality Assurance) intenta 'romper' el sistema para encontrar bugs antes que el usuario. Se verifica que cada requisito definido al inicio se haya cumplido estrictamente.",
+                list: [
+                    "Pruebas Unitarias y de Integración",
+                    "Pruebas de Sistema y Regresión",
+                    "UAT (User Acceptance Testing) con usuarios reales",
+                    "Pruebas de Carga, Estrés y Rendimiento",
+                    "Escaneo de vulnerabilidades de seguridad",
+                    "Reporte y seguimiento de bugs en Jira/Trello"
+                ]
+            },
+            despliegue: {
+                title: "Despliegue",
+                subtitle: "Lanzamiento al entorno real",
+                body: "Una vez aprobado, el software se mueve a producción. Este proceso puede ser gradual (Canary Release) o total (Blue-Green Deployment) para minimizar el riesgo de caídas del servicio. Se configuran los servidores y se migran los datos reales.",
+                list: [
+                    "Configuración de infraestructura en la nube (AWS/Azure/GCP)",
+                    "Implementación de pipelines de CI/CD",
+                    "Migración y limpieza de datos",
+                    "Lanzamiento oficial y comunicación al usuario",
+                    "Configuración de monitoreo y alertas",
+                    "Plan de rollback en caso de falla crítica"
+                ]
+            },
+            mantenimiento: {
+                title: "Mantenimiento",
+                subtitle: "Soporte y evolución continua",
+                body: "El software es un ente vivo. Después del lanzamiento, surgen errores imprevistos o el mercado cambia. El mantenimiento asegura que el sistema siga siendo útil, seguro y eficiente a lo largo de los años, evitando la 'deuda técnica'.",
+                list: [
+                    "Corrección de errores reportados por usuarios",
+                    "Actualizaciones de seguridad y parches",
+                    "Optimización de rendimiento y base de datos",
+                    "Implementación de nuevas funcionalidades",
+                    "Actualización de dependencias y frameworks",
+                    "Soporte técnico y capacitación de usuarios"
+                ]
+            }
+        };
+
+        const phases = Object.keys(phaseData);
+        let currentPhaseIndex = 0;
+
+        function updatePhase(phaseKey) {
+            const btn = document.querySelector(`.phase-btn[data-phase="${phaseKey}"]`);
+            if (btn) {
+                document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentPhaseIndex = phases.indexOf(phaseKey);
+            }
+
+            const data = phaseData[phaseKey];
+            const content = document.getElementById('phase-content');
+            content.innerHTML = `
+                <div class="content-inner">
+                    <div class="content-title">
+                        <h3>${data.title}</h3>
+                        <p>${data.subtitle}</p>
+                    </div>
+                    <div class="content-body">
+                        <h4>¿Qué se hace en esta etapa?</h4>
+                        <p>${data.body}</p>
+                        <ul>
+                            ${data.list.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.querySelectorAll('.phase-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                updatePhase(btn.getAttribute('data-phase'));
+            });
+        });
+
+        document.getElementById('prev-phase').addEventListener('click', () => {
+            currentPhaseIndex = (currentPhaseIndex - 1 + phases.length) % phases.length;
+            updatePhase(phases[currentPhaseIndex]);
+        });
+
+        document.getElementById('next-phase').addEventListener('click', () => {
+            currentPhaseIndex = (currentPhaseIndex + 1) % phases.length;
+            updatePhase(phases[currentPhaseIndex]);
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
