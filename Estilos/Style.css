@@ -47,6 +47,12 @@
     left: 20px;
     display: flex;
     align-items: center;
+    z-index: 1;
+    pointer-events: none;
+    }
+    .logo img {
+    cursor: pointer;
+    pointer-events: auto;
     }
 
 
