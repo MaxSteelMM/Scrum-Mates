@@ -68,13 +68,17 @@ html {
   font-weight: 700;
 }
 
-/* ===== Hero ===== */
 .mt-hero {
   background: linear-gradient(120deg, var(--mt-bg), var(--light-cyan) 140%);
   border: 1px solid var(--mt-line);
   border-radius: 22px;
   padding: 28px 18px;
   margin: 0 0 38px;
+  position: relative;
+  overflow: hidden;
+}
+.mt-hero .row {
+  margin: 0;
 }
 .mt-hero h1 {
   font-size: clamp(30px, 5vw, 44px);
@@ -99,8 +103,14 @@ html {
   font-weight: 700;
   color: var(--bright-teal-blue);
 }
+.mt-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .mt-ring svg {
   width: 100%;
+  max-width: 400px;
   height: auto;
   display: block;
   overflow: visible;
@@ -185,11 +195,25 @@ html {
   box-shadow: 0 6px 18px rgba(2, 62, 138, 0.12);
 }
 
+.align-items-center {
+  align-items: center !important;
+  margin-top: 30px !important;
+}
+
 /* ===== Tarjeta principal ===== */
 .mt-stage {
   border: 1.5px solid var(--acc);
   border-radius: 20px;
   box-shadow: 0 10px 28px rgba(2, 62, 138, 0.1);
+  width: 100%;
+}
+.mt-stage .row {
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  scale: inherit;
 }
 .mt-sl {
   background: linear-gradient(180deg, var(--mt-bg), var(--light-cyan));
@@ -199,6 +223,15 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 6px;
+  border-right: 1px solid var(--mt-line);
+}
+@media (max-width: 991px) {
+  .mt-sl {
+    border-right: 0;
+    border-bottom: 1px solid var(--mt-line);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
 }
 .mt-ic {
   width: 60px;
@@ -226,15 +259,16 @@ html {
 .mt-prog {
   width: 100%;
   margin-top: auto;
-  padding-top: 16px;
+  padding: 16px 10px 0;
   font-size: 10.5px;
   font-weight: 700;
   color: var(--bright-teal-blue);
   display: flex;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 .mt-pb {
-  width: 100%;
+  width: 97%;
   height: 4px;
   background: #fff;
   border-radius: 9px;
@@ -524,7 +558,7 @@ html {
   text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .mt-tab {
     flex-direction: column;
     text-align: center;
@@ -537,6 +571,13 @@ html {
   }
   .mt-hero {
     padding: 22px 8px;
+  }
+}
+@media (min-width: 992px) {
+  .mt-sl {
+    flex: 0 0 auto;
+    width: 100% !important;
+    padding:50px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
