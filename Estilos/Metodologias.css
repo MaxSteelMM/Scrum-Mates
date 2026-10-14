@@ -588,3 +588,22 @@ html {
     transition: none;
   }
 }
+.mt-ilus { margin-block: 3rem; }
+
+.mt-fig-btn { position: relative; display: block; width: 100%; background: #f4fbfe; cursor: zoom-in; }
+.mt-fig-btn:focus-visible { outline: 3px solid #00b4d8; outline-offset: -3px; }
+.mt-fig-btn img { aspect-ratio: 20 / 11; object-fit: contain; }
+
+.mt-fig-btn::after {
+    content: "\F52A"; font-family: "bootstrap-icons";  
+    position: absolute; right: 10px; top: 10px; width: 34px; height: 34px;
+    display: grid; place-items: center; border-radius: 50%;
+    background: rgba(3, 4, 94, .85); color: #fff; font-size: 14px;
+    opacity: 0; transition: opacity .2s;
+}
+.card:hover .mt-fig-btn::after, .mt-fig-btn:focus-visible::after { opacity: 1; }
+
+/* Lightbox (modal de Bootstrap) */
+#mtLightbox .modal-content { background: rgba(3, 4, 40, .96); }
+#mtLightbox .carousel-item img { max-height: 70vh; background: #fff; border-radius: .75rem; }
+#mtLightbox .carousel-control-prev, #mtLightbox .carousel-control-next { width: 8%; }
