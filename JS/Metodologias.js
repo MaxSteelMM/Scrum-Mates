@@ -126,7 +126,7 @@
   const bar = nav.querySelector('.toc__bar i');
   const setActive = id => links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
 
-  // Sección activa: la última cuyo borde superior ya pasó el 30% de la pantalla (las columnas en la misma fila cuentan una sola vez)
+
   const update = () => {
     const max = document.documentElement.scrollHeight - innerHeight;
     bar.style.width = (max > 0 ? Math.min(100, scrollY / max * 100) : 0) + '%';
