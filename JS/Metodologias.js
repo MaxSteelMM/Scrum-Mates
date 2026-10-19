@@ -1,263 +1,160 @@
-var S =
-  'fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"';
-var M = [
-  {
-    id: "cascada",
-    n: "Cascada",
-    s: "Secuencial y lineal",
-    c: "#0077b6",
-    t: "Modelo en cascada",
-    d: "Las fases se completan en orden: requisitos, diseño, implementación, pruebas y mantenimiento. No se avanza hasta aprobar la anterior, y cada etapa cierra con documentación formal.",
-    meta: ["Flujo: lineal", "Cambios: costosos", "Entrega: única, al final"],
-    ico: '<path d="M5 8h14M12 22h14M19 36h14" ' + S + "/>",
-    dia:
-      "<g " +
-      S +
-      ' style="color:var(--acc)"><rect x="0" y="4" width="140" height="32" rx="6" fill="#fff"/><rect x="60" y="48" width="140" height="32" rx="6" fill="#fff"/><rect x="120" y="92" width="140" height="32" rx="6" fill="#fff"/><rect x="180" y="136" width="140" height="32" rx="6" fill="#fff"/><rect x="240" y="180" width="140" height="32" rx="6" fill="#fff"/></g><text x="12" y="25">Requisitos</text><text x="72" y="69">Diseño</text><text x="132" y="113">Implementación</text><text x="192" y="157">Pruebas</text><text x="252" y="201">Mantenimiento</text>',
-    vb: "0 0 380 216",
-    p: [
-      "Estructura simple, fácil de explicar y gestionar.",
-      "Cada fase tiene entregables y fechas claras.",
-      "La documentación completa facilita el traspaso.",
-      "Funciona bien con equipos nuevos o rotativos.",
-    ],
-    k: [
-      "Es rígido: volver a una fase anterior sale caro.",
-      "El cliente ve el producto recién al final.",
-      "Los errores de requisitos aparecen tarde.",
-      "No tolera bien los cambios de alcance.",
-    ],
-    w: "Cuando los requisitos están cerrados, la tecnología es conocida y el alcance es acotado.",
-    u: ["Requisitos estables", "Alcance definido", "Contrato cerrado"],
-  },
-  {
-    id: "modelo-v",
-    n: "Modelo en V",
-    s: "Verificación y validación",
-    c: "#00b4d8",
-    t: "Modelo en V",
-    d: "Extiende la cascada: cada fase de desarrollo tiene una fase de prueba asociada, planificada desde el inicio. A la izquierda se construye; a la derecha se verifica y valida.",
-    meta: [
-      "Flujo: forma de V",
-      "Foco: pruebas tempranas",
-      "Entrega: única, al final",
-    ],
-    ico: '<path d="M6 8l16 28L38 8" ' + S + "/>",
-    dia:
-      '<path d="M30 20L190 176L350 20" ' +
-      S +
-      ' style="color:var(--acc)"/><g style="fill:var(--acc)"><circle cx="30" cy="20" r="6"/><circle cx="83" cy="72" r="6"/><circle cx="137" cy="124" r="6"/><circle cx="190" cy="176" r="7"/><circle cx="243" cy="124" r="6"/><circle cx="297" cy="72" r="6"/><circle cx="350" cy="20" r="6"/></g><g stroke="#48cae4" stroke-dasharray="4 5"><path d="M36 20H344"/><path d="M89 72H291"/><path d="M143 124H237"/></g><text x="0" y="8">Requisitos</text><text x="20" y="64">Diseño</text><text x="74" y="116">Detalle</text><text x="164" y="204">Código</text><text x="250" y="116">Unitarias</text><text x="304" y="64">Integración</text><text x="294" y="8">Aceptación</text>',
-    vb: "0 0 380 216",
-    p: [
-      "Las pruebas se planifican desde el comienzo.",
-      "Encuentra defectos antes que la cascada pura.",
-      "Cada requisito queda ligado a una prueba concreta.",
-      "Muy usado donde la calidad es crítica.",
-    ],
-    k: [
-      "Tan rígido como la cascada ante cambios.",
-      "No hay software funcionando hasta el final.",
-      "Exige mucha planificación y documentación.",
-      "Poco útil si los requisitos son inciertos.",
-    ],
-    w: "Cuando un fallo puede tener consecuencias graves y se necesita trazabilidad entre requisitos y pruebas.",
-    u: ["Sistemas médicos", "Automotriz y aeronáutica", "Software crítico"],
-  },
-  {
-    id: "iterativo",
-    n: "Iterativo e incremental",
-    s: "Entregas por ciclos",
-    c: "#023e8a",
-    t: "Modelos iterativos e incrementales",
-    d: "El producto se construye por ciclos. En cada iteración se repiten análisis, diseño, código y pruebas, y cada incremento suma funcionalidad utilizable a lo ya entregado.",
-    meta: [
-      "Flujo: cíclico",
-      "Cambios: entre ciclos",
-      "Entrega: parcial y progresiva",
-    ],
-    ico: '<path d="M36 22a14 14 0 1 1-4-10M36 6v8h-8" ' + S + "/>",
-    dia:
-      "<g " +
-      S +
-      ' style="color:var(--acc)"><rect x="10" y="130" width="70" height="70" rx="6" fill="#fff"/><rect x="100" y="90" width="70" height="110" rx="6" fill="#fff"/><rect x="190" y="50" width="70" height="150" rx="6" fill="#fff"/><rect x="280" y="10" width="70" height="190" rx="6" fill="#fff"/></g><text x="20" y="170">Ciclo 1</text><text x="110" y="150">Ciclo 2</text><text x="200" y="130">Ciclo 3</text><text x="290" y="110">Ciclo 4</text><text x="10" y="120">↻ feedback</text><text x="100" y="80">↻ feedback</text><text x="190" y="40">↻ feedback</text>',
-    vb: "0 0 360 216",
-    p: [
-      "Entrega valor temprano con versiones parciales.",
-      "Incorpora feedback y cambios en cada ciclo.",
-      "Reduce riesgos al detectarlos antes.",
-      "Es la base conceptual de las metodologías ágiles.",
-    ],
-    k: [
-      "Necesita una arquitectura pensada para crecer.",
-      "Cuesta fijar costo y plazo totales desde el inicio.",
-      "Puede generar retrabajo si no se controlan los ciclos.",
-      "Exige comunicación y gestión constantes.",
-    ],
-    w: "Cuando los requisitos pueden evolucionar, hace falta mostrar avances pronto o el proyecto es grande.",
-    u: ["Requisitos cambiantes", "Proyectos grandes", "Feedback frecuente"],
-  },
-];
+(() => {
+  const $ = s => document.querySelector(s);
 
-/* ===== Render (HTML con clases de Bootstrap) ===== */
-var L = function (a, f) {
-  return a.map(f).join("");
-};
-var tabsBox = document.getElementById("mt-tabs");
-var panels = document.getElementById("mt-panels");
-var dots = document.querySelectorAll("#dots i");
+  /* ===== Datos ===== */
+  const valores = [
+    ['bi-people', 'Individuos e interacciones', 'procesos y herramientas'],
+    ['bi-code-slash', 'Software funcionando', 'documentación extensiva'],
+    ['bi-handshake', 'Colaboración con el cliente', 'negociación contractual'],
+    ['bi-arrow-repeat', 'Respuesta ante el cambio', 'seguir un plan'],
+  ];
+  const principios = [
+    ['Satisfacer al cliente', 'Entregar software con valor de forma temprana y continua es la máxima prioridad.'],
+    ['Aceptar el cambio', 'Dar la bienvenida a los cambios de requisitos, incluso en etapas tardías del desarrollo.'],
+    ['Entregar con frecuencia', 'Entregar software funcionando en ciclos cortos: de semanas a meses, prefiriendo los más breves.'],
+    ['Colaborar cada día', 'Las personas de negocio y de desarrollo trabajan juntas diariamente durante el proyecto.'],
+    ['Confiar en las personas', 'Construir con equipos motivados, darles apoyo y entorno, y confiar en su capacidad.'],
+    ['Conversar cara a cara', 'La conversación cara a cara es el medio más eficaz para comunicar información dentro del equipo.'],
+    ['Medir software funcionando', 'El software que funciona es la principal medida de progreso, no el volumen de tareas.'],
+    ['Sostener el ritmo', 'Negocio, desarrollo y usuarios deben poder mantener un ritmo constante indefinidamente.'],
+    ['Cuidar la excelencia técnica', 'La atención continua a la excelencia técnica y al buen diseño mejora la agilidad.'],
+    ['Hacerlo simple', 'La simplicidad es esencial: maximizar la cantidad de trabajo que no es necesario realizar.'],
+    ['Autoorganizarse', 'Las mejores arquitecturas, requisitos y diseños emergen de equipos autoorganizados.'],
+    ['Reflexionar y adaptar', 'A intervalos regulares, el equipo reflexiona sobre cómo ser más eficaz y ajusta su forma de trabajar.'],
+  ];
+  const metodos = [
+    {
+      id: 'scrum', nombre: 'Scrum', icon: 'bi-arrow-repeat', color: '#0077b6', tag: 'ITERATIVO E INCREMENTAL',
+      sub: 'Un marco ligero para generar valor ante problemas complejos.', nav: 'Valor en Sprints',
+      que: '¿Qué es Scrum?',
+      txt: 'Un equipo multifuncional y autogestionado construye incrementos útiles en Sprints de un mes o menos. Aprende de los resultados y adapta lo que hará después.',
+      box: ['Empirismo: aprender de la experiencia', 'Transparencia para hacer visible el trabajo; inspección para evaluar resultados; adaptación para ajustar el rumbo.', 'Compromiso · Foco · Apertura · Respeto · Coraje'],
+      side: ['Un ciclo de valor y aprendizaje', ['Product Backlog', 'Sprint · 1 mes o menos', 'Incremento utilizable'], 1, 'Inspeccionar el producto y mejorar el proceso en cada Sprint.'],
+      grupos: [
+        ['Roles', 'roles', 'Responsabilidades', [['Product Owner', 'Maximiza el valor del producto y gestiona eficazmente el Product Backlog.'], ['Scrum Master', 'Establece Scrum y ayuda al equipo y a la organización a mejorar su efectividad.'], ['Developers', 'Crean un incremento útil en cada Sprint y sostienen la calidad del producto.']]],
+        ['Eventos', 'eventos', 'Eventos dentro del Sprint', [['Sprint Planning', 'Acordar por qué el Sprint es valioso, qué se hará y cómo abordarlo.'], ['Daily Scrum', '15 minutos para inspeccionar el avance hacia el Objetivo del Sprint y adaptar el plan.'], ['Sprint Review', 'Inspeccionar el resultado con interesados y decidir futuras adaptaciones.'], ['Sprint Retrospective', 'Planificar mejoras en calidad y efectividad para el siguiente Sprint.']]],
+        ['Artefactos', 'artefactos', 'Artefactos y compromisos', [['Product Backlog → Objetivo del Producto', 'Lista ordenada y emergente de lo necesario para mejorar el producto.'], ['Sprint Backlog → Objetivo del Sprint', 'Objetivo, elementos elegidos y plan de acción elaborado por Developers.'], ['Incremento → Definición de Terminado', 'Paso concreto y utilizable que cumple las medidas de calidad acordadas.']]],
+      ],
+      pie: ['El Sprint es el contenedor de los demás eventos', 'No es una fase de desarrollo aislada: integra todo el trabajo necesario para crear valor. Se pueden entregar incrementos antes de la Sprint Review.'],
+    },
+    {
+      id: 'kanban', nombre: 'Kanban', icon: 'bi-columns-gap', color: '#00b4d8', tag: 'FLUJO CONTINUO',
+      sub: 'Mejorar el servicio optimizando el flujo de trabajo.', nav: 'Flujo continuo de trabajo',
+      que: '¿Qué es Kanban?',
+      txt: 'Un método para gestionar y mejorar el flujo de valor. Parte del proceso actual, hace visible el trabajo y permite introducir cambios evolutivos, sin exigir Sprints.',
+      box: ['Ver el trabajo para mejorar el sistema', 'Visualizar el trabajo · Limitar el trabajo en curso (WIP) · Gestionar el flujo · Hacer explícitas las políticas · Establecer feedback · Mejorar de forma colaborativa.'],
+      board: [['Por hacer', '4 pendientes', ['Filtro por metodología', 'Ayuda contextual', 'Perfil de usuario', 'Buscar recursos']], ['En curso', '2 / 2 · WIP', ['Crear historias', 'Diseñar tablero'], 1], ['En revisión', '1 / 2 · WIP', ['Validar registro']], ['Terminado', '2 entregadas', ['Acceso al curso', 'Vista de lecciones']]],
+      boardNote: 'Política explícita: tomar una nueva tarjeta solo si hay capacidad. «Terminado» requiere pruebas aprobadas y aceptación del cliente.',
+      grupos: [
+        ['Roles', 'roles', 'Roles y responsabilidades', [['Conservar los roles existentes', 'Kanban no impone nuevos roles. El equipo acuerda quién gestiona, ejecuta y mejora el trabajo.']]],
+        ['Revisiones', 'revisiones', 'Revisiones según el contexto', [['Feedback y reposición', 'No hay eventos obligatorios. Las revisiones de flujo y la reposición se ajustan a las necesidades del servicio.']]],
+        ['Herramientas', 'artefactos', 'Artefactos y herramientas', [['Tablero, tarjetas y límites WIP', 'Métricas de flujo: WIP, tiempo de ciclo, edad del trabajo y throughput (elementos terminados por período).']]],
+      ],
+      pie: ['Empezar menos, terminar más', 'En el ejemplo, «En curso» alcanzó su límite de 2. Antes de iniciar otra tarea, el equipo ayuda a que el trabajo actual avance.'],
+    },
+    {
+      id: 'xp', nombre: 'XP · Extreme Programming', icon: 'bi-code-slash', color: '#023e8a', tag: 'EXCELENCIA TÉCNICA', short: 'XP',
+      sub: 'Calidad del software y feedback rápido como hábitos de equipo.', nav: 'Excelencia técnica y feedback',
+      que: '¿Qué es XP?',
+      txt: 'Una metodología ágil de desarrollo que combina colaboración cercana con el cliente y prácticas de ingeniería. Reduce el riesgo mediante cambios pequeños, pruebas y feedback constante.',
+      box: ['Cinco valores que se refuerzan entre sí', 'Comunicación, simplicidad, feedback, coraje y respeto guían tanto el trabajo técnico como la relación entre las personas.'],
+      side: ['TDD: desarrollar guiándose por pruebas', ['01 · Prueba que falla', '02 · Código mínimo', '03 · Refactorizar'], -1, 'Repetir en pasos pequeños, con todas las pruebas pasando.'],
+      grupos: [
+        ['Personas', 'roles', 'Personas y colaboración', [['Cliente y desarrolladores', 'El cliente aclara necesidades y prioridades; los desarrolladores estiman, construyen y prueban en colaboración.'], ['Coach según el equipo', 'Puede acompañar las prácticas y el aprendizaje. No son las responsabilidades obligatorias de Scrum.'], ['Propiedad colectiva', 'Todo el equipo cuida y puede mejorar el código compartido, con estándares comunes.']]],
+        ['Prácticas', 'eventos', 'Prácticas y cadencia', [['Planificación y entregas pequeñas', 'Elegir historias valiosas y liberar versiones frecuentes para aprender pronto.'], ['TDD y programación en parejas', 'Escribir pruebas antes del código y trabajar de a dos para revisar decisiones continuamente.'], ['Integración continua y refactorización', 'Integrar y probar cambios con frecuencia; mejorar el diseño sin alterar el comportamiento.']]],
+        ['Elementos', 'artefactos', 'Elementos de trabajo', [['Historias de usuario', 'Expresan necesidades desde el valor para el usuario y sirven para conversar y planificar.'], ['Pruebas de aceptación', 'Concretan con el cliente los resultados esperados y permiten comprobarlos.'], ['Software probado', 'El código integrado y sus pruebas automatizadas sostienen entregas confiables.']]],
+      ],
+      pie: ['Calidad sin agotamiento', 'XP promueve un ritmo sostenible: la calidad técnica, los cambios pequeños y el descanso ayudan a mantener la capacidad de entregar valor.'],
+    },
+  ];
 
-tabsBox.innerHTML = L(M, function (m, i) {
-  return (
-    '<a class="mt-tab' +
-    (i === 0 ? " active" : "") +
-    '" id="t-' +
-    m.id +
-    '" href="#' +
-    m.id +
-    '" role="tab" data-bs-toggle="tab" data-bs-target="#' +
-    m.id +
-    '" aria-controls="' +
-    m.id +
-    '" aria-selected="' +
-    (i === 0) +
-    '" style="--c:' +
-    m.c +
-    '">' +
-    '<svg viewBox="0 0 44 44" style="color:' +
-    m.c +
-    '">' +
-    m.ico +
-    "</svg>" +
-    "<div><b>" +
-    m.n +
-    "</b><span>" +
-    m.s +
-    "</span></div></a>"
-  );
-});
+  /* ===== Render ===== */
+  $('#valores-grid').innerHTML = valores.map(v => `
+    <div class="col"><div class="ag-card"><span class="mt-o"><i class="bi ${v[0]}"></i></span>
+    <h3>${v[1]}</h3><small>SOBRE</small><p>${v[2]}</p></div></div>`).join('');
 
-panels.innerHTML = L(M, function (m, i) {
-  return (
-    '<div class="tab-pane fade' +
-    (i === 0 ? " show active" : "") +
-    '" id="' +
-    m.id +
-    '" role="tabpanel" aria-labelledby="t-' +
-    m.id +
-    '" tabindex="0" style="--acc:' +
-    m.c +
-    '">' +
-    '<div class="card mt-stage overflow-hidden"><div class="row g-0">' +
-    '<div class="col-lg-3 mt-sl"><div class="mt-ic"><svg viewBox="0 0 44 44">' +
-    m.ico +
-    "</svg></div>" +
-    "<h3>" +
-    m.n +
-    "</h3><p>" +
-    m.s +
-    "</p>" +
-    '<div class="mt-prog"><span>MODELO ACTIVO</span><span>' +
-    (i + 1) +
-    " / 3</span></div>" +
-    '<div class="mt-pb"><i style="width:' +
-    Math.round(((i + 1) / 3) * 100) +
-    '%"></i></div></div>' +
-    '<div class="col-lg-9 p-4"><div class="row g-4 align-items-center">' +
-    '<div class="col-md-6"><h4>¿Qué es este modelo?</h4><p>' +
-    m.d +
-    "</p>" +
-    '<div class="mt-feat"><h5>Características principales</h5><ul>' +
-    L(m.meta, function (x) {
-      var a = x.split(": ");
-      return "<li><b>" + a[0] + ":</b> " + a[1] + "</li>";
-    }) +
-    "</ul></div></div>" +
-    '<div class="col-md-6"><div class="mt-dg"><svg viewBox="' +
-    m.vb +
-    '" role="img" aria-label="Diagrama: ' +
-    m.n +
-    '">' +
-    m.dia +
-    "</svg></div></div>" +
-    "</div></div></div></div>" +
-    '<div class="row g-3 mt-1">' +
-    '<div class="col-md-6"><div class="mt-col mt-pro"><h3><i class="bi bi-check-lg"></i>Ventajas</h3><ul>' +
-    L(m.p, function (x) {
-      return "<li>" + x + "</li>";
-    }) +
-    "</ul></div></div>" +
-    '<div class="col-md-6"><div class="mt-col mt-con"><h3><i class="bi bi-x-lg"></i>Desventajas</h3><ul>' +
-    L(m.k, function (x) {
-      return "<li>" + x + "</li>";
-    }) +
-    "</ul></div></div>" +
-    "</div>" +
-    '<div class="mt-use row g-3 align-items-center mx-0 mt-3"><div class="col-lg"><h3>¿Cuándo utilizarlo?</h3><p>' +
-    m.w +
-    "</p></div>" +
-    '<ul class="col-lg-auto d-flex flex-wrap gap-2 p-0 m-0">' +
-    L(m.u, function (x) {
-      return "<li>" + x + "</li>";
-    }) +
-    "</ul></div>" +
-    "</div>"
-  );
-});
+  $('#principios-grid').innerHTML = principios.map((p, i) => `
+    <div class="col"><div class="ag-pr"><span class="n">${String(i + 1).padStart(2, '0')}</span>
+    <div><h3>${p[0]}</h3><p>${p[1]}</p></div></div></div>`).join('');
 
-document.getElementById("cards").innerHTML = L(M, function (m) {
-  return (
-    '<div class="col"><a class="mt-cd" href="#' +
-    m.id +
-    '" style="--c:' +
-    m.c +
-    '"><b>' +
-    m.n +
-    "</b><p>" +
-    m.w +
-    "</p><em>Ver detalle →</em></a></div>"
-  );
-});
+  $('#metodo-nav').innerHTML = metodos.map(m => `
+    <div class="col"><a class="ag-jump" href="#${m.id}" style="--c:${m.color}"><i class="bi ${m.icon}"></i>
+    <div><b>${m.short || m.nombre}</b><span>${m.nav}</span></div></a></div>`).join('');
 
-/* ===== Navegación interna (Bootstrap Tab + anclajes) ===== */
-var ids = M.map(function (m) {
-  return m.id;
-});
-var tabs = ids.map(function (id) {
-  return document.getElementById("t-" + id);
-});
-var cur = 0;
+  const side = m => {
+    if (!m.side) return '';
+    const [t, steps, on, foot] = m.side;
+    return `<div class="ag-box"><h4>${t}</h4><div class="ag-steps">${steps.map((s, i) => `<b class="${i === on ? 'on' : ''}">${s}</b>`).join('')}</div><p class="mb-0 text-primary fw-bold" style="font-size:12px">${foot}</p></div>`;
+  };
+  const board = m => !m.board ? '' : `
+    <div class="ag-board">${m.board.map(c => `<div class="ag-col ${c[3] ? 'hl' : ''}"><h6>${c[0]}<em>${c[1]}</em></h6>${c[2].map(t => `<div>${t}</div>`).join('')}</div>`).join('')}</div>
+    <p class="mt-2 mb-0" style="font-size:12px">${m.boardNote}</p>`;
 
-function showTab(n) {
-  bootstrap.Tab.getOrCreateInstance(tabs[(n + ids.length) % ids.length]).show();
-}
+  $('#metodo-list').innerHTML = metodos.map(m => `
+    <article class="ag-m" id="${m.id}" data-toc="${m.short || m.nombre}" style="--c:${m.color}">
+      <header class="ag-mh"><span class="mt-o"><i class="bi ${m.icon}"></i></span>
+        <div><h3>${m.nombre}</h3><p>${m.sub}</p></div><span class="ag-tag">${m.tag}</span></header>
+      <div class="ag-mb">
+        <div class="row g-3">
+          <div class="col-lg-6"><h4 class="fs-6 fw-bold">${m.que}</h4><p style="font-size:13.5px">${m.txt}</p>
+            <div class="ag-box"><h5>${m.box[0]}</h5>${m.box[1]}${m.box[2] ? `<div class="chips">${m.box[2]}</div>` : ''}</div></div>
+          <div class="col-lg-6">${side(m) || `<div class="ag-box"><h5>${m.box[0]}</h5>${m.box[1]}</div>`}</div>
+        </div>
+        ${board(m)}
+        <div class="row g-4 ag-grp">${m.grupos.map(g => `
+          <div class="col-lg-4 ag-g" id="${m.id}-${g[1]}" data-toc="${g[0]}" data-toc-level="2">
+            <h4>${g[2]}</h4></div>`).join('')}
+        </div>
+        <div class="ag-note mt-4"><i class="bi bi-lightbulb"></i><span><b>${m.pie[0]}</b><br>${m.pie[1]}</span></div>
+      </div>
+    </article>`).join('');
 
-tabs.forEach(function (t, n) {
-  t.addEventListener("shown.bs.tab", function () {
-    cur = n;
-    dots.forEach(function (d, j) {
-      d.className = j === n ? "on" : "";
+  /* ===== Índice flotante ===== */
+  const targets = [...document.querySelectorAll('[data-toc]')];
+  const nav = document.createElement('nav');
+  nav.className = 'toc';
+  nav.setAttribute('aria-label', 'En esta página');
+  nav.innerHTML = `<button class="toc__fab" type="button" aria-expanded="false" aria-label="Abrir índice de la página"><i class="bi bi-list-ul"></i></button>
+    <div class="toc__panel"><p class="toc__title">EN ESTA PÁGINA</p><div class="toc__bar" aria-hidden="true"><i></i></div><ul></ul></div>`;
+  const list = nav.querySelector('ul');
+  list.innerHTML = targets.filter(t => t.dataset.tocLevel !== '2').map(t =>
+    `<li><a href="#${t.id}">${t.dataset.toc}</a></li>`).join('');
+  document.body.appendChild(nav);
+
+  const links = [...list.querySelectorAll('a')];
+  const fab = nav.querySelector('.toc__fab');
+  const bar = nav.querySelector('.toc__bar i');
+  const setActive = id => links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + id));
+
+  // Sección activa: la última cuyo borde superior ya pasó el 30% de la pantalla (las columnas en la misma fila cuentan una sola vez)
+  const update = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.width = (max > 0 ? Math.min(100, scrollY / max * 100) : 0) + '%';
+    let cur = targets[0], prevTop = null;
+    targets.forEach(t => {
+      const top = t.getBoundingClientRect().top;
+      const sameRow = prevTop !== null && Math.abs(top - prevTop) < 4;
+      if (top <= innerHeight * 0.3 && !sameRow) cur = t;
+      prevTop = top;
     });
-    try {
-      history.replaceState(null, "", "#" + ids[n]);
-    } catch (e) {}
+    setActive(cur.id);
+  };
+  addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', update);
+  update();
+
+  const close = () => { nav.classList.remove('is-open'); fab.setAttribute('aria-expanded', 'false'); };
+  list.addEventListener('click', e => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    e.preventDefault();
+    const dest = document.querySelector(a.getAttribute('href'));
+    dest.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    history.replaceState(null, '', a.getAttribute('href'));
+    setActive(dest.id);
+    close();
   });
-});
-
-document.getElementById("prev").onclick = function () {
-  showTab(cur - 1);
-};
-document.getElementById("next").onclick = function () {
-  showTab(cur + 1);
-};
-
-function fromHash(scroll) {
-  var n = ids.indexOf(location.hash.slice(1));
-  if (n < 0) return;
-  showTab(n);
-  if (scroll) document.getElementById("modelos").scrollIntoView();
-}
-window.addEventListener("hashchange", function () {
-  fromHash(true);
-});
-dots[0].className = "on";
-fromHash(true);
+  fab.addEventListener('click', () => fab.setAttribute('aria-expanded', nav.classList.toggle('is-open')));
+  addEventListener('keydown', e => e.key === 'Escape' && close());
+  document.addEventListener('click', e => { if (!nav.contains(e.target)) close(); });
+})();
