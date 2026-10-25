@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios Prácticos - ScrumMates</title>
+    <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="stylesheet" href="../Estilos/Ejercicios.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <a href="../index.html"><img src="../Img/Logo/LOGO-SCRUMATES.svg" alt="Logo" width="25%"></a>
+        </div>
+        <input type="checkbox" id="menu-toggle" style="display: none;">
+        <label for="menu-toggle" class="hamburger"><span></span><span></span><span></span></label>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="./Calidad.html">Calidad del Software</a></li>
+            <li><a href="./Herramientas_calidad.html">Herramientas de Calidad</a></li>
+            <li><a href="./Ciclo_vida.html">Ciclo de vida</a></li>
+            <li><a href="./Modelos_Tradicionales.html">Modelos Tradicionales</a></li>
+            <li><a href="./Metodologias.html">Metodologías Ágiles</a></li>
+            <li><a href="./Procesos.html">Procesos de Desarrollo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </div>
+
+    <main class="container mt-5 mb-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Ejercicios y Casos Prácticos</h1>
+            <p class="text-muted">Pon a prueba tus conocimientos con estos escenarios reales</p>
+        </div>
+
+        <div class="row g-4" id="exercises-grid">
+            <!-- Cargado dinámicamente por JS -->
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (() => {
+            const exercises = [
+                {
+                    title: 'Escenario 1: El Sprint Bloqueado',
+                    difficulty: 'medium',
+                    difficultyLabel: 'Medio',
+                    statement: 'Un equipo Scrum se encuentra a mitad de un Sprint. El Product Owner decide añadir una funcionalidad "urgente" que no estaba en el Sprint Backlog. El equipo dice que no hay capacidad. ¿Cómo debería resolverse según la guía de Scrum?',
+                    solution: 'El Product Owner no puede forzar la entrada de tareas en un Sprint en curso sin afectar el Objetivo del Sprint. Debe discutirlo con los Developers. Si el cambio es crítico, el PO puede cancelar el Sprint (extremadamente raro) o, más comúnmente, añadir la tarea al Product Backlog para el siguiente Sprint.'
+                },
+                {
+                    title: 'Escenario 2: Kanban y el Cuello de Botella',
+                    difficulty: 'easy',
+                    difficultyLabel: 'Fácil',
+                    statement: 'En un tablero Kanban, la columna "En Revisión" tiene 10 tarjetas, mientras que "Por Hacer" tiene 2 y "Hecho" no ha avanzado en dos días. ¿Qué está sucediendo y cuál es la solución inmediata?',
+                    solution: 'Se ha identificado un cuello de botella en la fase de revisión. La solución no es añadir más tareas a "En Proceso", sino que todo el equipo (incluidos los desarrolladores) ayude a liberar la columna de revisión para restablecer el flujo (principio de "Stop starting, start finishing").'
+                },
+                {
+                    title: 'Escenario 3: Calidad vs Tiempo',
+                    difficulty: 'hard',
+                    difficultyLabel: 'Difícil',
+                    statement: 'Un proyecto tiene una fecha de entrega inamovible en 2 semanas. El equipo descubre un bug crítico que afecta al 5% de los usuarios, pero corregirlo retrasaría la entrega 3 días. ¿Qué opciones tiene el equipo desde la perspectiva de Gestión de Calidad?',
+                    solution: 'El equipo debe analizar el riesgo. Opciones: 1. Lanzar con el bug documentado como "conocido" y crear un parche inmediato post-lanzamiento. 2. Negociar el alcance eliminando una funcionalidad menor para ganar tiempo y corregir el bug. 3. Retrasar el lanzamiento. La decisión debe basarse en el impacto al usuario y la tolerancia al riesgo del negocio.'
+                }
+            ];
+
+            const renderExercises = () => {
+                const grid = document.getElementById('exercises-grid');
+                grid.innerHTML = exercises.map((ex, index) => `
+                    <div class="col-12">
+                        <div class="card exercise-card">
+                            <div class="exercise-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0 fw-bold">${ex.title}</h5>
+                                <span class="difficulty-badge diff-${ex.difficulty}">${ex.difficultyLabel}</span>
+                            </div>
+                            <div class="exercise-body">
+                                <p class="mb-4">${ex.statement}</p>
+                                <button class="btn btn-toggle-solution" data-index="${index}">
+                                    Ver Solución <i class="bi bi-eye ms-2"></i>
+                                </button>
+                                <div class="solution-container" id="sol-${index}">
+                                    <div class="solution-title">
+                                        <i class="bi bi-check-circle-fill"></i> Solución Sugerida:
+                                    </div>
+                                    <div class="solution-text">
+                                        ${ex.solution}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                document.querySelectorAll('.btn-toggle-solution').forEach(btn => {
+                    btn.onclick = () => {
+                        const index = btn.dataset.index;
+                        const sol = document.getElementById(`sol-${index}`);
+                        const isShowing = sol.classList.contains('show');
+
+                        sol.classList.toggle('show');
+                        btn.innerHTML = isShowing
+                            ? `Ver Solución <i class="bi bi-eye ms-2"></i>`
+                            : `Ocultar Solución <i class="bi bi-eye-slash ms-2"></i>`;
+                    };
+                });
+            };
+
+            document.addEventListener('DOMContentLoaded', renderExercises);
+        })();
+    </script>
+</body>
+</html>
