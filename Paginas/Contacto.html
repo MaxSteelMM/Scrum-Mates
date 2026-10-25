@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - ScrumMates</title>
+    <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="stylesheet" href="../Estilos/Contacto.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <a href="../index.html"><img src="../Img/Logo/LOGO-SCRUMATES.svg" alt="Logo" width="25%"></a>
+        </div>
+        <input type="checkbox" id="menu-toggle" style="display: none;">
+        <label for="menu-toggle" class="hamburger"><span></span><span></span><span></label>
+        <ul id="global-nav">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="./Calidad.html">Calidad del Software</a></li>
+            <li><a href="./Herramientas_calidad.html">Herramientas de Calidad</a></li>
+            <li><a href="./Ciclo_vida.html">Ciclo de vida</a></li>
+            <li><a href="./Modelos_Tradicionales.html">Modelos Tradicionales</a></li>
+            <li><a href="./Metodologias.html">Metodologías Ágiles</a></li>
+            <li><a href="./Procesos.html">Procesos de Desarrollo</a></li>
+            <li><a href="./Glosario.html">Glosario</a></li>
+            <li><a href="./FAQ.html">FAQ</a></li>
+            <li><a href="./Recursos.html">Recursos</a></li>
+            <li><a href="./Ejercicios.html">Ejercicios</a></li>
+            <li><a href="./Nosotros.html">Nosotros</a></li>
+            <li><a href="./Contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+
+    <main class="container mt-5 mb-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Contáctanos</h1>
+            <p class="text-muted">Estamos aquí para resolver tus dudas sobre agilidad y calidad</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-card" id="form-container">
+                <form id="contact-form" novalidate>
+                    <div class="form-group">
+                        <label class="form-label" for="name">Nombre completo</label>
+                        <input type="text" id="name" class="form-control-custom" placeholder="Ej. Juan Pérez" required>
+                        <span class="error-message" id="error-name">El nombre es obligatorio.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Correo electrónico</label>
+                        <input type="email" id="email" class="form-control-custom" placeholder="juan@ejemplo.com" required>
+                        <span class="error-message" id="error-email">Por favor, ingresa un correo válido.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="subject">Asunto</label>
+                        <input type="text" id="subject" class="form-control-custom" placeholder="¿En qué podemos ayudarte?" required>
+                        <span class="error-message" id="error-subject">El asunto es obligatorio.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="message">Mensaje</label>
+                        <textarea id="message" class="form-control-custom" rows="5" placeholder="Escribe tu consulta aquí..." required></textarea>
+                        <span class="error-message" id="error-message">El mensaje no puede estar vacío.</span>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="submit-btn">
+                        Enviar Mensaje <i class="bi bi-send-fill ms-2"></i>
+                    </button>
+                </form>
+
+                <div class="confirmation-message" id="confirmation">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <h2 class="fw-bold">¡Mensaje Enviado!</h2>
+                    <p class="text-muted">Hemos recibido tu mensaje correctamente. Te responderemos lo antes posible.</p>
+                    <button class="btn btn-outline-primary mt-3" onclick="location.reload()">Enviar otro mensaje</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/Formularios.js"></script>
+</body>
+</html>
