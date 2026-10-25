@@ -68,6 +68,9 @@
     },
   ];
 
+  /* Exponer datos globalmente para otros scripts */
+  window.scrumMatesData = { valores, principios, metodos };
+
   /* ===== Render ===== */
   $('#valores-grid').innerHTML = valores.map(v => `
     <div class="col"><div class="ag-card"><span class="mt-o"><i class="bi ${v[0]}"></i></span>

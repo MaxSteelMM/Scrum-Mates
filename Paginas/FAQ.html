@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preguntas Frecuentes - ScrumMates</title>
+    <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="stylesheet" href="../Estilos/FAQ.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <a href="../index.html"><img src="../Img/Logo/LOGO-SCRUMATES.svg" alt="Logo" width="25%"></a>
+        </div>
+        <input type="checkbox" id="menu-toggle" style="display: none;">
+        <label for="menu-toggle" class="hamburger"><span></span><span></span><span></span></label>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="./Calidad.html">Calidad del Software</a></li>
+            <li><a href="./Herramientas_calidad.html">Herramientas de Calidad</a></li>
+            <li><a href="./Ciclo_vida.html">Ciclo de vida</a></li>
+            <li><a href="./Modelos_Tradicionales.html">Modelos Tradicionales</a></li>
+            <li><a href="./Metodologias.html">Metodologías Ágiles</a></li>
+            <li><a href="./Procesos.html">Procesos de Desarrollo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </div>
+
+    <main class="container mt-5 mb-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Preguntas Frecuentes</h1>
+            <p class="text-muted">Resuelve tus dudas sobre calidad de software y metodologías ágiles</p>
+        </div>
+
+        <div class="faq-container" id="faq-list">
+            <!-- Las preguntas se cargan dinámicamente desde JavaScript -->
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (() => {
+            const faqData = [
+                {
+                    q: '¿Cuál es la diferencia principal entre Scrum y Kanban?',
+                    a: 'Scrum se basa en iteraciones fijas llamadas Sprints y roles definidos (PO, SM, Devs), mientras que Kanban se enfoca en el flujo continuo de trabajo y la limitación del WIP sin imponer roles ni ciclos fijos.'
+                },
+                {
+                    q: '¿Qué es la Deuda Técnica?',
+                    a: 'Es la consecuencia de tomar decisiones de diseño rápidas o subóptimas para entregar funcionalidad pronto, lo que genera un costo de mantenimiento más alto en el futuro.'
+                },
+                {
+                    q: '¿Cómo se mide la calidad del software?',
+                    a: 'Se utilizan métricas como la densidad de defectos, la cobertura de pruebas unitarias, el tiempo medio entre fallos (MTBF) y la satisfacción del usuario final.'
+                },
+                {
+                    q: '¿Es necesario usar Scrum para ser ágil?',
+                    a: 'No. Scrum es un marco de trabajo (framework) muy popular, pero la agilidad es una mentalidad basada en los valores del Manifiesto Ágil. Puedes usar Kanban, XP o un modelo híbrido.'
+                },
+                {
+                    q: '¿Qué es el TDD?',
+                    a: 'Test Driven Development es una práctica donde escribes la prueba unitaria antes que el código funcional. Si la prueba falla, escribes el código mínimo para que pase, y luego refactorizas.'
+                },
+                {
+                    q: '¿En qué consiste un Sprint?',
+                    a: 'Es un ciclo de tiempo (generalmente de 1 a 4 semanas) durante el cual el equipo desarrolla un incremento de software potencialmente entregable.'
+                }
+            ];
+
+            const $ = s => document.querySelector(s);
+
+            const renderFAQ = () => {
+                const list = $('#faq-list');
+                list.innerHTML = faqData.map((item, index) => `
+                    <div class="faq-item" id="faq-${index}">
+                        <button class="faq-question"
+                                aria-expanded="false"
+                                aria-controls="answer-${index}">
+                            ${item.q}
+                            <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer"
+                             id="answer-${index}"
+                             role="region"
+                             aria-labelledby="faq-btn-${index}">
+                            <div class="faq-content">
+                                ${item.a}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                document.querySelectorAll('.faq-question').forEach(btn => {
+                    btn.onclick = () => {
+                        const item = btn.closest('.faq-item');
+                        const isActive = item.classList.contains('active');
+
+                        // Cerrar otros acordeones (comportamiento opcional, mejora la limpieza)
+                        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                        document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+                        if (!isActive) {
+                            item.classList.add('active');
+                            btn.setAttribute('aria-expanded', 'true');
+                        }
+                    };
+                });
+            };
+
+            document.addEventListener('DOMContentLoaded', renderFAQ);
+        })();
+    </script>
+</body>
+</html>
