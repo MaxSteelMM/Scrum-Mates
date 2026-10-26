@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparador de Metodologías - ScrumMates</title>
+    <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="stylesheet" href="../Estilos/Comparador.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <a href="../index.html"><img src="../Img/Logo/LOGO-SCRUMATES.svg" alt="Logo" width="25%"></a>
+        </div>
+        <input type="checkbox" id="menu-toggle" style="display: none;">
+        <label for="menu-toggle" class="hamburger"><span></span><span></span><span></label>
+        <ul id="global-nav">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="./Calidad.html">Calidad del Software</a></li>
+            <li><a href="./Herramientas_calidad.html">Herramientas de Calidad</a></li>
+            <li><a href="./Ciclo_vida.html">Ciclo de vida</a></li>
+            <li><a href="./Modelos_Tradicionales.html">Modelos Tradicionales</a></li>
+            <li><a href="./Metodologias.html">Metodologías Ágiles</a></li>
+            <li><a href="./Procesos.html">Procesos de Desarrollo</a></li>
+            <li><a href="./Glosario.html">Glosario</a></li>
+            <li><a href="./FAQ.html">FAQ</a></li>
+            <li><a href="./Recursos.html">Recursos</a></li>
+            <li><a href="./Ejercicios.html">Ejercicios</a></li>
+            <li><a href="./Nosotros.html">Nosotros</a></li>
+            <li><a href="./Contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+
+    <main class="container mt-5 mb-5 comparator-container">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Comparador de Metodologías</h1>
+            <p class="text-muted">Selecciona los marcos de trabajo que deseas comparar para analizar sus diferencias clave</p>
+        </div>
+
+        <div class="selection-panel">
+            <h5 class="fw-bold mb-3">Selecciona Metodologías:</h5>
+            <div class="method-checkbox-group" id="method-selectors">
+                <!-- Generado dinámicamente por JS -->
+            </div>
+        </div>
+
+        <div id="table-container" class="comparison-table-wrapper">
+            <!-- Tabla generada dinámicamente -->
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/Comparador.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* Estilos para el Comparador de Metodologías */
+.comparator-container {
+    padding: 2rem 0;
+}
+
+.selection-panel {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.method-checkbox-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.method-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.method-checkbox:hover {
+    border-color: #0077b6;
+    background: #eef6fb;
+}
+
+.method-checkbox input {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.comparison-table-wrapper {
+    overflow-x: auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.dynamic-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.dynamic-table th, .dynamic-table td {
+    padding: 1.25rem;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+.dynamic-table thead th {
+    background: #0077b6;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+}
+
+.dynamic-table tbody td:first-child {
+    background: #f8f9fa;
+    font-weight: 700;
+    color: #343a40;
+    width: 200px;
+}
+
+.no-selection-msg {
+    text-align: center;
+    padding: 4rem;
+    color: #6c757d;
+}
+
+.no-selection-msg i {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
