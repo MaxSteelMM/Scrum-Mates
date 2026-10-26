@@ -17,7 +17,244 @@
 }
 
 .sprint-controls {
+    display: flex;/* Estilos para componentes interactivos de metodologías */
+:root {
+    --sprint-bg: #f8f9fa;
+    --sprint-accent: #0077b6;
+    --kanban-col-bg: #ebedef;
+    --kanban-card-bg: #ffffff;
+}
+
+/* --- US-10: Sprint Timeline --- */
+.sprint-container {
+    background: var(--sprint-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sprint-controls {
     display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Sin width variable ni overflow: antes el timeline llegaba a 400 % de ancho
+   y cortaba las etiquetas de los extremos. */
+.sprint-timeline {
+    position: relative;
+    height: 150px;
+    background: #fff;
+    border-radius: 10px;
+    border: 2px solid var(--sprint-accent);
+    margin: 1.5rem 0 1rem;
+}
+
+.sprint-track {
+    position: absolute;
+    height: 4px;
+    background: var(--sprint-accent);
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* El contenedor es solo un área de clic; el círculo es .event-dot */
+.sprint-event {
+    position: absolute;
+    top: 50%;
+    width: 28px;
+    height: 28px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.event-dot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 4px solid var(--sprint-accent);
+    border-radius: 50%;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sprint-event:hover .event-dot,
+.sprint-event:focus-visible .event-dot {
+    background: var(--sprint-accent);
+    transform: scale(1.2);
+}
+
+.sprint-event:focus-visible {
+    outline: 3px solid #90e0ef;
+    outline-offset: 3px;
+}
+
+/* Etiquetas: alternan abajo / arriba para no superponerse */
+.event-label {
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 8px);
+    transform: translateX(-50%);
+    width: 92px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #495057;
+}
+
+.sprint-event.is-up .event-label {
+    top: auto;
+    bottom: calc(100% + 8px);
+}
+
+/* Primer y último evento: la etiqueta no se sale del cuadro */
+.sprint-event.is-start .event-label {
+    left: 0;
+    transform: none;
+    text-align: left;
+}
+
+.sprint-event.is-end .event-label {
+    left: auto;
+    right: 0;
+    transform: none;
+    text-align: right;
+}
+
+.sprint-caption {
+    text-align: center;
+    font-size: 13px;
+    margin: 0;
+    color: #495057;
+}
+
+.duration-options {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.dur-btn {
+    padding: 5px 15px;
+    border: 1px solid var(--sprint-accent);
+    background: transparent;
+    color: var(--sprint-accent);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.dur-btn.active,
+.dur-btn:hover {
+    background: var(--sprint-accent);
+    color: #fff;
+}
+
+.dur-btn:focus-visible {
+    outline: 3px solid #90e0ef;
+    outline-offset: 2px;
+}
+
+.control-label {
+    font-weight: 700;
+    color: #495057;
+    font-size: 14px;
+}
+
+/* --- US-11: Kanban interactivo --- */
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.kanban-col {
+    background: var(--kanban-col-bg);
+    border-radius: 10px;
+    padding: 1rem;
+    min-height: 400px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.kanban-col.drag-over {
+    border-color: var(--sprint-accent);
+    background: #dfe3e6;
+}
+
+.kanban-col.wip-blocked {
+    border-color: #dc3545;
+    animation: shake 0.5s ease-in-out;
+}
+
+.kanban-col h6 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #343a40;
+}
+
+.wip-badge {
+    background: #6c757d;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.kanban-card {
+    background: var(--kanban-card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 5px solid var(--sprint-accent);
+}
+
+.kanban-card:active {
+    cursor: grabbing;
+}
+
+.kanban-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@media (max-width: 768px) {
+    .kanban-board {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .kanban-col.wip-blocked { animation: none; }
+    .event-dot, .kanban-card { transition: none; }
+}
     align-items: center;
     gap: 1rem;
     margin-bottom: 2rem;
@@ -35,6 +272,8 @@
     align-items: center;
     padding: 0 20px;
     overflow-x: auto;
+    transition: width 0.4s ease;
+    width: var(--sprint-scale, 100%);
 }
 
 .sprint-track {
@@ -79,7 +318,33 @@
     color: #495057;
 }
 
-/* --- US-11: Kanban Board --- */
+.duration-options {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dur-btn {
+    padding: 5px 15px;
+    border: 1px solid var(--sprint-accent);
+    background: transparent;
+    color: var(--sprint-accent);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.dur-btn.active, .dur-btn:hover {
+    background: var(--sprint-accent);
+    color: #fff;
+}
+
+.control-label {
+    font-weight: 700;
+    color: #495057;
+    font-size: 14px;
+}
 .kanban-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

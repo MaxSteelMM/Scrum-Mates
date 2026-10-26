@@ -30,6 +30,12 @@
       txt: 'Un equipo multifuncional y autogestionado construye incrementos útiles en Sprints de un mes o menos. Aprende de los resultados y adapta lo que hará después.',
       box: ['Empirismo: aprender de la experiencia', 'Transparencia para hacer visible el trabajo; inspección para evaluar resultados; adaptación para ajustar el rumbo.', 'Compromiso · Foco · Apertura · Respeto · Coraje'],
       side: ['Un ciclo de valor y aprendizaje', ['Product Backlog', 'Sprint · 1 mes o menos', 'Incremento utilizable'], 1, 'Inspeccionar el producto y mejorar el proceso en cada Sprint.'],
+      timelineEvents: [
+        { id: 'planning', label: 'Sprint Planning', pos: '5%', goal: 'Definir el Objetivo del Sprint y seleccionar los elementos del Product Backlog.', duration: 'Max 8h para Sprint de 1 mes' },
+        { id: 'daily', label: 'Daily Scrum', pos: '25%', goal: 'Inspeccionar el progreso hacia el Objetivo del Sprint y adaptar el plan.', duration: '15 min' },
+        { id: 'review', label: 'Sprint Review', pos: '85%', goal: 'Inspeccionar el incremento y adaptar el Product Backlog.', duration: 'Max 4h para Sprint de 1 mes' },
+        { id: 'retro', label: 'Sprint Retrospective', pos: '95%', goal: 'Planificar mejoras en la calidad y efectividad del equipo.', duration: 'Max 3h para Sprint de 1 mes' }
+      ],
       grupos: [
         ['Roles', 'roles', 'Responsabilidades', [['Product Owner', 'Maximiza el valor del producto y gestiona eficazmente el Product Backlog.'], ['Scrum Master', 'Establece Scrum y ayuda al equipo y a la organización a mejorar su efectividad.'], ['Developers', 'Crean un incremento útil en cada Sprint y sostienen la calidad del producto.']]],
         ['Eventos', 'eventos', 'Eventos dentro del Sprint', [['Sprint Planning', 'Acordar por qué el Sprint es valioso, qué se hará y cómo abordarlo.'], ['Daily Scrum', '15 minutos para inspeccionar el avance hacia el Objetivo del Sprint y adaptar el plan.'], ['Sprint Review', 'Inspeccionar el resultado con interesados y decidir futuras adaptaciones.'], ['Sprint Retrospective', 'Planificar mejoras en calidad y efectividad para el siguiente Sprint.']]],
