@@ -1,6 +1,7 @@
+
 <!doctype html>
 <html lang="es">
-
+ 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,13 +16,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 </head>
-
+ 
 <body class="mt">
-
+ 
     <div id="site-nav"></div>
-
+ 
     <main class="container mt-main" id="top">
-
+ 
+        <!-- ===== Hero ===== -->
         <section class="mt-hero row align-items-center g-4" data-toc="Inicio" id="inicio">
             <div class="col-lg-6">
                 <h1>Metodologías Ágiles <em>Aprender, entregar y mejorar</em></h1>
@@ -54,35 +56,310 @@
                 </svg>
             </div>
         </section>
-
+ 
+        <!-- ===== Valores ===== -->
         <section id="valores" data-toc="Valores">
             <div class="mt-kick">LA BASE COMPARTIDA · MANIFIESTO ÁGIL, 2001</div>
             <h2 class="mt-h2 mb-3">4 valores para poner el foco en lo importante</h2>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3" id="valores-grid"></div>
-            <div class="ag-note mt-3"><i class="bi bi-info-circle"></i> Es decir: aunque valoramos los elementos de la
-                derecha, valoramos más los de la izquierda. Agilidad no significa dejar de planificar ni de documentar.
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3" id="valores-grid">
+                <div class="col">
+                    <div class="ag-card">
+                        <span class="mt-o"><i class="bi bi-people" aria-hidden="true"></i></span>
+                        <h3>Individuos e interacciones</h3>
+                        <small>SOBRE</small>
+                        <p>procesos y herramientas</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="ag-card">
+                        <span class="mt-o"><i class="bi bi-code-slash" aria-hidden="true"></i></span>
+                        <h3>Software funcionando</h3>
+                        <small>SOBRE</small>
+                        <p>documentación extensiva</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="ag-card">
+                        <span class="mt-o"><i class="bi bi-handshake" aria-hidden="true"></i></span>
+                        <h3>Colaboración con el cliente</h3>
+                        <small>SOBRE</small>
+                        <p>negociación contractual</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="ag-card">
+                        <span class="mt-o"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></span>
+                        <h3>Respuesta ante el cambio</h3>
+                        <small>SOBRE</small>
+                        <p>seguir un plan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ag-note mt-3"><i class="bi bi-info-circle" aria-hidden="true"></i> Es decir: aunque valoramos
+                los elementos de la derecha, valoramos más los de la izquierda. Agilidad no significa dejar de
+                planificar ni de documentar.
             </div>
         </section>
-
+ 
+        <!-- ===== Principios ===== -->
         <section id="principios" data-toc="Principios" class="ag-sec">
             <div class="mt-kick">DE LOS VALORES A LA ACCIÓN</div>
             <h2 class="mt-h2">12 principios que guían el trabajo diario</h2>
             <p class="mb-3">No son una lista de tareas: son criterios para decidir cómo colaborar, entregar y mejorar.
             </p>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3" id="principios-grid"></div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3" id="principios-grid">
+                <div class="col"><div class="ag-pr"><span class="n">01</span><div><h3>Satisfacer al cliente</h3><p>Entregar software con valor de forma temprana y continua es la máxima prioridad.</p></div></div></div>
+                <div class="col"><div class="ag-pr"><span class="n">02</span><div><h3>Aceptar el cambio</h3><p>Dar la bienvenida a los cambios de requisitos, incluso en etapas tardías del desarrollo.</p></div></div></div>
+                <div class="col"><div class="ag-pr"><span class="n">03</span><div><h3>Entregar con frecuencia</h3><p>Entregar software funcionando en ciclos cortos: de semanas a meses, prefiriendo los más breves.</p></div></div></div>
+                <div class="col"><div class="ag-pr"><span class="n">04</span><div><h3>Colaborar cada día</h3><p>Las personas de negocio y de desarrollo trabajan juntas diariamente durante el proyecto.</p></div></div></div>
+                <div class="col"><div class="ag-pr"><span class="n">05</span><div><h3>Confiar en las personas</h3><p>Construir con equipos motivados, darles apoyo y entorno, y confiar en su capacidad.</p></div></div></div>
+                <div class="col"><div class="ag-pr"><span class="n">06</span><div><h3>Conversar cara a cara</h3><p>La conversación cara a cara es el medio más eficaz para comunicar información dentro del equipo.</p></div></div></div>
+                <div class="col"><div class="ag-pr"><span class="n">07</span><div><h3>Medir software funcionando</h3><p>El software que funciona es la principal medida de progreso, no el volumen de tareas.</p></div></div></div>
+                <div class="col"><div class="ag-pr"><span class="n">08</span><div><h3>Sostener el ritmo</h3><p>Negocio, desarrollo y usuarios deben poder mantener un ritmo constante indefinidamente.</p></div></div></div>
+                <div class="col"><div class="ag-pr"><span class="n">09</span><div><h3>Cuidar la excelencia técnica</h3><p>La atención continua a la excelencia técnica y al buen diseño mejora la agilidad.</p></div></div></div>
+                <div class="col"><div class="ag-pr"><span class="n">10</span><div><h3>Hacerlo simple</h3><p>La simplicidad es esencial: maximizar la cantidad de trabajo que no es necesario realizar.</p></div></div></div>
+                <div class="col"><div class="ag-pr"><span class="n">11</span><div><h3>Autoorganizarse</h3><p>Las mejores arquitecturas, requisitos y diseños emergen de equipos autoorganizados.</p></div></div></div>
+                <div class="col"><div class="ag-pr"><span class="n">12</span><div><h3>Reflexionar y adaptar</h3><p>A intervalos regulares, el equipo reflexiona sobre cómo ser más eficaz y ajusta su forma de trabajar.</p></div></div></div>
+            </div>
         </section>
-
+ 
+        <!-- ===== Metodologías ===== -->
         <section id="metodologias" class="ag-sec">
             <div class="mt-kick">LAS METODOLOGÍAS</div>
             <h2 class="mt-h2">Tres formas de llevar la agilidad a la práctica</h2>
             <p class="mb-3">Explorá cada enfoque: todos sus contenidos están desplegados a continuación.</p>
-            <div class="row row-cols-1 row-cols-md-3 g-3 mb-4" id="metodo-nav"></div>
+ 
+            <div class="row row-cols-1 row-cols-md-3 g-3 mb-4" id="metodo-nav">
+                <div class="col">
+                    <a class="ag-jump ag-jump--scrum" href="#scrum"><i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                        <div><b>Scrum</b><span>Valor en Sprints</span></div></a>
+                </div>
+                <div class="col">
+                    <a class="ag-jump ag-jump--kanban" href="#kanban"><i class="bi bi-columns-gap" aria-hidden="true"></i>
+                        <div><b>Kanban</b><span>Flujo continuo de trabajo</span></div></a>
+                </div>
+                <div class="col">
+                    <a class="ag-jump ag-jump--xp" href="#xp"><i class="bi bi-code-slash" aria-hidden="true"></i>
+                        <div><b>XP</b><span>Excelencia técnica y feedback</span></div></a>
+                </div>
+            </div>
+ 
             <div id="metodo-list" class="d-grid gap-4">
-                <!-- El contenido se genera dinámicamente via JS/Metodologias.js -->
-                <!-- Se recomienda añadir un botón de "Explorar en profundidad" específicamente para Scrum en el JS -->
+ 
+                <!-- ---------- SCRUM ---------- -->
+                <article class="ag-m ag-m--scrum" id="scrum" data-toc="Scrum">
+                    <header class="ag-mh">
+                        <span class="mt-o"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></span>
+                        <div><h3>Scrum</h3><p>Un marco ligero para generar valor ante problemas complejos.</p></div>
+                        <span class="ag-tag">ITERATIVO E INCREMENTAL</span>
+                    </header>
+                    <div class="ag-mb">
+                        <div class="row g-3">
+                            <div class="col-lg-6">
+                                <h4 class="ag-que">¿Qué es Scrum?</h4>
+                                <p class="ag-txt">Un equipo multifuncional y autogestionado construye incrementos útiles en Sprints de un mes o menos. Aprende de los resultados y adapta lo que hará después.</p>
+                                <div class="ag-box">
+                                    <h5>Empirismo: aprender de la experiencia</h5>
+                                    Transparencia para hacer visible el trabajo; inspección para evaluar resultados; adaptación para ajustar el rumbo.
+                                    <div class="chips">Compromiso · Foco · Apertura · Respeto · Coraje</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ag-box">
+                                    <h4>Un ciclo de valor y aprendizaje</h4>
+                                    <div class="ag-steps">
+                                        <b>Product Backlog</b>
+                                        <b class="on">Sprint · 1 mes o menos</b>
+                                        <b>Incremento utilizable</b>
+                                    </div>
+                                    <p class="ag-foot">Inspeccionar el producto y mejorar el proceso en cada Sprint.</p>
+                                </div>
+                            </div>
+                        </div>
+ 
+ 
+                        <div class="row g-4 ag-grp">
+                            <div class="col-lg-4 ag-g" id="scrum-roles" data-toc="Roles" data-toc-level="2">
+                                <h4>Responsabilidades</h4>
+                                <dl>
+                                    <dt>Product Owner</dt><dd>Maximiza el valor del producto y gestiona eficazmente el Product Backlog.</dd>
+                                    <dt>Scrum Master</dt><dd>Establece Scrum y ayuda al equipo y a la organización a mejorar su efectividad.</dd>
+                                    <dt>Developers</dt><dd>Crean un incremento útil en cada Sprint y sostienen la calidad del producto.</dd>
+                                </dl>
+                            </div>
+                            <div class="col-lg-4 ag-g" id="scrum-eventos" data-toc="Eventos" data-toc-level="2">
+                                <h4>Eventos dentro del Sprint</h4>
+                                <dl>
+                                    <dt>Sprint Planning</dt><dd>Acordar por qué el Sprint es valioso, qué se hará y cómo abordarlo.</dd>
+                                    <dt>Daily Scrum</dt><dd>15 minutos para inspeccionar el avance hacia el Objetivo del Sprint y adaptar el plan.</dd>
+                                    <dt>Sprint Review</dt><dd>Inspeccionar el resultado con interesados y decidir futuras adaptaciones.</dd>
+                                    <dt>Sprint Retrospective</dt><dd>Planificar mejoras en calidad y efectividad para el siguiente Sprint.</dd>
+                                </dl>
+                            </div>
+                            <div class="col-lg-4 ag-g" id="scrum-artefactos" data-toc="Artefactos" data-toc-level="2">
+                                <h4>Artefactos y compromisos</h4>
+                                <dl>
+                                    <dt>Product Backlog → Objetivo del Producto</dt><dd>Lista ordenada y emergente de lo necesario para mejorar el producto.</dd>
+                                    <dt>Sprint Backlog → Objetivo del Sprint</dt><dd>Objetivo, elementos elegidos y plan de acción elaborado por Developers.</dd>
+                                    <dt>Incremento → Definición de Terminado</dt><dd>Paso concreto y utilizable que cumple las medidas de calidad acordadas.</dd>
+                                </dl>
+                            </div>
+                        </div>
+ 
+                        <div class="ag-note mt-4"><i class="bi bi-lightbulb" aria-hidden="true"></i>
+                            <span><b>El Sprint es el contenedor de los demás eventos</b><br>No es una fase de desarrollo aislada: integra todo el trabajo necesario para crear valor. Se pueden entregar incrementos antes de la Sprint Review.</span></div>
+                    </div>
+                     <div class="ag-cta">
+                            <a href="Scrum.html" class="btn btn-outline-primary rounded-pill">
+                                Explorar Scrum en profundidad <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                </article>
+ 
+                <!-- ---------- KANBAN ---------- -->
+                <article class="ag-m ag-m--kanban" id="kanban" data-toc="Kanban">
+                    <header class="ag-mh">
+                        <span class="mt-o"><i class="bi bi-columns-gap" aria-hidden="true"></i></span>
+                        <div><h3>Kanban</h3><p>Mejorar el servicio optimizando el flujo de trabajo.</p></div>
+                        <span class="ag-tag">FLUJO CONTINUO</span>
+                    </header>
+                    <div class="ag-mb">
+                        <div class="row g-3">
+                            <div class="col-lg-6">
+                                <h4 class="ag-que">¿Qué es Kanban?</h4>
+                                <p class="ag-txt">Un método para gestionar y mejorar el flujo de valor. Parte del proceso actual, hace visible el trabajo y permite introducir cambios evolutivos, sin exigir Sprints.</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ag-box">
+                                    <h5>Ver el trabajo para mejorar el sistema</h5>
+                                    Visualizar el trabajo · Limitar el trabajo en curso (WIP) · Gestionar el flujo · Hacer explícitas las políticas · Establecer feedback · Mejorar de forma colaborativa.
+                                </div>
+                            </div>
+                        </div>
+ 
+                        <div class="ag-board">
+                            <div class="ag-col">
+                                <h6>Por hacer<em>4 pendientes</em></h6>
+                                <div class="ag-task">Filtro por metodología</div>
+                                <div class="ag-task">Ayuda contextual</div>
+                                <div class="ag-task">Perfil de usuario</div>
+                                <div class="ag-task">Buscar recursos</div>
+                            </div>
+                            <div class="ag-col hl">
+                                <h6>En curso<em>2 / 2 · WIP</em></h6>
+                                <div class="ag-task">Crear historias</div>
+                                <div class="ag-task">Diseñar tablero</div>
+                            </div>
+                            <div class="ag-col">
+                                <h6>En revisión<em>1 / 2 · WIP</em></h6>
+                                <div class="ag-task">Validar registro</div>
+                            </div>
+                            <div class="ag-col">
+                                <h6>Terminado<em>2 entregadas</em></h6>
+                                <div class="ag-task">Acceso al curso</div>
+                                <div class="ag-task">Vista de lecciones</div>
+                            </div>
+                        </div>
+                        <p class="ag-board-note">Política explícita: tomar una nueva tarjeta solo si hay capacidad. «Terminado» requiere pruebas aprobadas y aceptación del cliente.</p>
+ 
+                        <div class="row g-4 ag-grp">
+                            <div class="col-lg-4 ag-g" id="kanban-roles" data-toc="Roles" data-toc-level="2">
+                                <h4>Roles y responsabilidades</h4>
+                                <dl>
+                                    <dt>Conservar los roles existentes</dt><dd>Kanban no impone nuevos roles. El equipo acuerda quién gestiona, ejecuta y mejora el trabajo.</dd>
+                                </dl>
+                            </div>
+                            <div class="col-lg-4 ag-g" id="kanban-revisiones" data-toc="Revisiones" data-toc-level="2">
+                                <h4>Revisiones según el contexto</h4>
+                                <dl>
+                                    <dt>Feedback y reposición</dt><dd>No hay eventos obligatorios. Las revisiones de flujo y la reposición se ajustan a las necesidades del servicio.</dd>
+                                </dl>
+                            </div>
+                            <div class="col-lg-4 ag-g" id="kanban-artefactos" data-toc="Herramientas" data-toc-level="2">
+                                <h4>Artefactos y herramientas</h4>
+                                <dl>
+                                    <dt>Tablero, tarjetas y límites WIP</dt><dd>Métricas de flujo: WIP, tiempo de ciclo, edad del trabajo y throughput (elementos terminados por período).</dd>
+                                </dl>
+                            </div>
+                        </div>
+ 
+                        <div class="ag-note mt-4"><i class="bi bi-lightbulb" aria-hidden="true"></i>
+                            <span><b>Empezar menos, terminar más</b><br>En el ejemplo, «En curso» alcanzó su límite de 2. Antes de iniciar otra tarea, el equipo ayuda a que el trabajo actual avance.</span></div>
+ 
+                        <div class="ag-cta">
+                            <a href="Kanban.html" class="btn btn-outline-primary rounded-pill">
+                                Explorar Kanban en profundidad <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+ 
+                <!-- ---------- XP ---------- -->
+                <article class="ag-m ag-m--xp" id="xp" data-toc="XP">
+                    <header class="ag-mh">
+                        <span class="mt-o"><i class="bi bi-code-slash" aria-hidden="true"></i></span>
+                        <div><h3>XP · Extreme Programming</h3><p>Calidad del software y feedback rápido como hábitos de equipo.</p></div>
+                        <span class="ag-tag">EXCELENCIA TÉCNICA</span>
+                    </header>
+                    <div class="ag-mb">
+                        <div class="row g-3">
+                            <div class="col-lg-6">
+                                <h4 class="ag-que">¿Qué es XP?</h4>
+                                <p class="ag-txt">Una metodología ágil de desarrollo que combina colaboración cercana con el cliente y prácticas de ingeniería. Reduce el riesgo mediante cambios pequeños, pruebas y feedback constante.</p>
+                                <div class="ag-box">
+                                    <h5>Cinco valores que se refuerzan entre sí</h5>
+                                    Comunicación, simplicidad, feedback, coraje y respeto guían tanto el trabajo técnico como la relación entre las personas.
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ag-box">
+                                    <h4>TDD: desarrollar guiándose por pruebas</h4>
+                                    <div class="ag-steps">
+                                        <b>01 · Prueba que falla</b>
+                                        <b>02 · Código mínimo</b>
+                                        <b>03 · Refactorizar</b>
+                                    </div>
+                                    <p class="ag-foot">Repetir en pasos pequeños, con todas las pruebas pasando.</p>
+                                </div>
+                            </div>
+                        </div>
+ 
+                        <div class="row g-4 ag-grp">
+                            <div class="col-lg-4 ag-g" id="xp-roles" data-toc="Personas" data-toc-level="2">
+                                <h4>Personas y colaboración</h4>
+                                <dl>
+                                    <dt>Cliente y desarrolladores</dt><dd>El cliente aclara necesidades y prioridades; los desarrolladores estiman, construyen y prueban en colaboración.</dd>
+                                    <dt>Coach según el equipo</dt><dd>Puede acompañar las prácticas y el aprendizaje. No son las responsabilidades obligatorias de Scrum.</dd>
+                                    <dt>Propiedad colectiva</dt><dd>Todo el equipo cuida y puede mejorar el código compartido, con estándares comunes.</dd>
+                                </dl>
+                            </div>
+                            <div class="col-lg-4 ag-g" id="xp-eventos" data-toc="Prácticas" data-toc-level="2">
+                                <h4>Prácticas y cadencia</h4>
+                                <dl>
+                                    <dt>Planificación y entregas pequeñas</dt><dd>Elegir historias valiosas y liberar versiones frecuentes para aprender pronto.</dd>
+                                    <dt>TDD y programación en parejas</dt><dd>Escribir pruebas antes del código y trabajar de a dos para revisar decisiones continuamente.</dd>
+                                    <dt>Integración continua y refactorización</dt><dd>Integrar y probar cambios con frecuencia; mejorar el diseño sin alterar el comportamiento.</dd>
+                                </dl>
+                            </div>
+                            <div class="col-lg-4 ag-g" id="xp-artefactos" data-toc="Elementos" data-toc-level="2">
+                                <h4>Elementos de trabajo</h4>
+                                <dl>
+                                    <dt>Historias de usuario</dt><dd>Expresan necesidades desde el valor para el usuario y sirven para conversar y planificar.</dd>
+                                    <dt>Pruebas de aceptación</dt><dd>Concretan con el cliente los resultados esperados y permiten comprobarlos.</dd>
+                                    <dt>Software probado</dt><dd>El código integrado y sus pruebas automatizadas sostienen entregas confiables.</dd>
+                                </dl>
+                            </div>
+                        </div>
+ 
+                        <div class="ag-note mt-4"><i class="bi bi-lightbulb" aria-hidden="true"></i>
+                            <span><b>Calidad sin agotamiento</b><br>XP promueve un ritmo sostenible: la calidad técnica, los cambios pequeños y el descanso ayudan a mantener la capacidad de entregar valor.</span></div>
+                    </div>
+                </article>
+ 
             </div>
         </section>
-
+ 
+        <!-- ===== Galería ===== -->
         <section id="galeria" data-toc="Galería" class="ag-sec">
             <div class="text-center mb-4">
                 <div class="mt-kick">VISUALIZACIÓN</div>
@@ -131,7 +408,8 @@
                 </div>
             </div>
         </section>
-
+ 
+        <!-- ===== Comparativa ===== -->
         <section id="comparativa" data-toc="Comparativa" class="ag-sec">
             <div class="text-center mb-4">
                 <div class="mt-kick">EN RESUMEN</div>
@@ -176,17 +454,17 @@
                     </tbody>
                 </table>
             </div>
-            <div class="ag-note mt-3"><i class="bi bi-lightbulb"></i> <span><b>Se pueden complementar.</b> Un equipo
+            <div class="ag-note mt-3"><i class="bi bi-lightbulb" aria-hidden="true"></i> <span><b>Se pueden complementar.</b> Un equipo
                     puede usar Scrum para organizar el trabajo, prácticas de Kanban para mejorar su flujo y XP para
                     cuidar la calidad del software, combinándolos con intención y preservando sus fundamentos.</span>
             </div>
         </section>
     </main>
-
+ 
     <footer class="mt-foot">© 2026 ScrumMates · Procesos de desarrollo</footer>
-
-    <!-- Modal para eventos de Sprint -->
-    <div class="modal fade" id="sprint-event-modal" tabindex="-1" aria-hidden="true">
+ 
+    <!-- Modal para eventos de Sprint (se completa desde Metodologias.js con los data-* de cada botón) -->
+    <div class="modal fade" id="sprint-event-modal" tabindex="-1" aria-labelledby="sprint-event-title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -202,12 +480,22 @@
             </div>
         </div>
     </div>
-
+ 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../JS/navbar.js" defer></script>
     <script src="../JS/Metodologias.js"></script>
     <script src="../JS/Interactivos.js"></script>
     <script src="../JS/Mod_lightbox.js"></script>
 </body>
-
+ 
 </html>
+ 
+
+
+
+
+
+
+
+
+

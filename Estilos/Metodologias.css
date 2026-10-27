@@ -1,10 +1,33 @@
-/* Usa las variables de Modelos_tradicionales.css */
+
+html {
+  scroll-behavior: smooth;
+}
 [data-toc] {
   scroll-margin-top: 90px;
 }
 .ag-sec {
   margin-top: 56px;
 }
+.ag-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--mt-bg);
+  border: 1px solid var(--mt-line);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--deep-twilight);
+}
+.ag-note i {
+  color: var(--bright-teal-blue);
+}
+.ag-cta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* ---------- 2. Hero ---------- */
 .ag-stats {
   display: flex;
   gap: 8px;
@@ -21,6 +44,7 @@
   padding: 4px 12px;
 }
 
+/* ---------- 3. Valores ---------- */
 .ag-card {
   height: 100%;
   background: #fff;
@@ -48,21 +72,8 @@
   font-size: 13px;
   margin: 0;
 }
-.ag-note {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  background: var(--mt-bg);
-  border: 1px solid var(--mt-line);
-  border-radius: 12px;
-  padding: 12px 16px;
-  font-size: 13px;
-  color: var(--deep-twilight);
-}
-.ag-note i {
-  color: var(--bright-teal-blue);
-}
 
+/* ---------- 4. Principios ---------- */
 .ag-pr {
   display: flex;
   gap: 12px;
@@ -93,6 +104,7 @@
   margin: 0;
 }
 
+/* ---------- 5. Navegación entre metodologías ---------- */
 .ag-jump {
   display: flex;
   gap: 12px;
@@ -102,6 +114,7 @@
   border: 1.5px solid var(--mt-line);
   background: var(--mt-bg);
   color: var(--mt-txt);
+  text-decoration: none;
 }
 .ag-jump:hover {
   background: #fff;
@@ -120,6 +133,21 @@
   font-size: 11.5px;
 }
 
+/* Color de cada metodología (se usa en el acceso rápido y en la tarjeta) */
+.ag-jump--scrum,
+.ag-m--scrum {
+  --c: #0077b6;
+}
+.ag-jump--kanban,
+.ag-m--kanban {
+  --c: #00b4d8;
+}
+.ag-jump--xp,
+.ag-m--xp {
+  --c: #023e8a;
+}
+
+/* ---------- 6. Tarjeta de metodología ---------- */
 .ag-m {
   border: 1.5px solid var(--mt-line);
   border-top: 4px solid var(--c);
@@ -163,6 +191,26 @@
 .ag-mb {
   padding: 24px;
 }
+.ag-que {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.ag-txt {
+  font-size: 13.5px;
+}
+.ag-sub {
+  margin: 24px 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.ag-sub small {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--mt-txt);
+}
+
+/* ---------- 7. Cajas, pasos y notas ---------- */
 .ag-box {
   background: var(--mt-bg);
   border: 1px solid var(--mt-line);
@@ -206,32 +254,80 @@
   border-color: var(--bright-teal-blue);
   color: #fff;
 }
-
-.ag-grp {
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 1px solid var(--mt-line);
-}
-.ag-g h4 {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-.ag-g dt {
-  font-size: 13px;
-  color: var(--deep-twilight);
+.ag-foot {
+  margin: 0;
+  font-size: 12px;
   font-weight: 700;
-  margin-top: 10px;
-}
-.ag-g dd {
-  font-size: 12.5px;
-  margin: 2px 0 0;
+  color: var(--bright-teal-blue);
 }
 
+/* ---------- 8. Línea de eventos del Sprint ---------- */
+.sprint-line {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  position: relative;
+}
+.sprint-line::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 11px;
+  height: 3px;
+  border-radius: 9px;
+  background: var(--light-cyan);
+}
+.sprint-line li {
+  position: relative;
+  text-align: center;
+}
+.sprint-event {
+  position: relative;
+  width: 100%;
+  padding: 26px 8px 8px;
+  border: 0;
+  background: none;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--deep-twilight);
+  cursor: pointer;
+}
+.sprint-event::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid var(--c);
+  transition: transform 0.15s;
+}
+.sprint-event:hover::before {
+  transform: translateX(-50%) scale(1.2);
+}
+.sprint-event:focus-visible {
+  outline: 3px solid var(--turquoise-surf);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* ---------- 9. Tablero Kanban de ejemplo ---------- */
 .ag-board {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   margin-top: 18px;
+}
+.ag-board-note {
+  margin: 8px 0 0;
+  font-size: 12px;
 }
 .ag-col {
   background: var(--mt-bg);
@@ -257,7 +353,7 @@
   font-size: 10.5px;
   color: var(--bright-teal-blue);
 }
-.ag-col div {
+.ag-task {
   background: #fff;
   border: 1px solid var(--mt-line);
   border-top: 3px solid var(--turquoise-surf);
@@ -266,19 +362,35 @@
   font-size: 12px;
   margin-bottom: 6px;
 }
-@media (max-width: 767px) {
-  .ag-board {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .ag-tag {
-    margin-left: 0;
-  }
+
+/* ---------- 10. Grupos (roles / eventos / artefactos) ---------- */
+.ag-grp {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--mt-line);
+}
+.ag-g h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.ag-g dl {
+  margin: 0;
+}
+.ag-g dt {
+  font-size: 13px;
+  color: var(--deep-twilight);
+  font-weight: 700;
+  margin-top: 10px;
+}
+.ag-g dt:first-child {
+  margin-top: 0;
+}
+.ag-g dd {
+  font-size: 12.5px;
+  margin: 2px 0 0;
 }
 
-/* ===== Índice flotante ===== */
-html {
-  scroll-behavior: smooth;
-}
+/* ---------- 11. Índice flotante ---------- */
 .toc {
   position: fixed;
   z-index: 1030;
@@ -359,10 +471,6 @@ html {
   background: var(--mt-bg);
   color: var(--deep-twilight);
 }
-.toc a.is-sub {
-  padding-left: 24px;
-  font-size: 12.5px;
-}
 .toc a.is-active {
   background: var(--light-cyan);
   color: var(--deep-twilight);
@@ -373,6 +481,24 @@ html {
   outline: 3px solid var(--turquoise-surf);
   outline-offset: 2px;
 }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767px) {
+  .ag-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ag-tag {
+    margin-left: 0;
+  }
+  .ag-steps {
+    flex-direction: column;
+  }
+  .sprint-line::before {
+    display: none;
+  }
+}
+
+/* Pantallas anchas: el índice queda fijo a la derecha */
 @media (min-width: 1500px) {
   .toc {
     right: 20px;
@@ -388,8 +514,13 @@ html {
     width: 200px;
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .sprint-event::before,
+  .toc__bar i {
+    transition: none;
   }
 }
