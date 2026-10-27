@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrum en Profundidad - ScrumMates</title>
+    <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="stylesheet" href="../Estilos/Navbar.css">
+    <link rel="stylesheet" href="../Estilos/Metodologias.css">
+    <link rel="stylesheet" href="../Estilos/Interactivos.css">
+    <link rel="stylesheet" href="../Estilos/scrum.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="mt">
+
+    <div id="site-nav"></div>
+
+    <main class="container mt-main">
+
+        <!-- Introduction -->
+        <section class="scrum-hero row align-items-center g-4" id="inicio">
+            <div class="col-lg-7">
+                <h1 class="display-4 fw-bold text-primary">Scrum <em class="text-muted">en profundidad</em></h1>
+                <p class="lead">Scrum es un marco de trabajo ligero que ayuda a las personas, equipos y organizaciones a generar valor a través de soluciones adaptativas para problemas complejos.</p>
+                <p>Se basa en el <strong>empirismo</strong> (el conocimiento proviene de la experiencia) y el <strong>lean thinking</strong> (reducir el desperdicio y enfocarse en lo esencial). Es ideal en entornos de alta incertidumbre donde el feedback constante permite ajustar el rumbo rápidamente.</p>
+                <a href="Metodologias.html" class="btn btn-outline-primary rounded-pill">
+                    <i class="bi bi-arrow-left"></i> Volver a Metodologías
+                </a>
+            </div>
+            <div class="col-lg-5 text-center">
+                <img src="../Img/Screenshot 2026-10-19 212421 - copia.png" class="img-fluid rounded shadow-lg" alt="Esquema de Scrum">
+            </div>
+        </section>
+
+        <!-- Roles -->
+        <section class="ag-sec" id="roles">
+            <div class="text-center mb-5">
+                <div class="mt-kick">EQUIPO SCRUM</div>
+                <h2 class="mt-h2">Roles y Responsabilidades</h2>
+                <p>Un equipo Scrum es pequeño, multifuncional y autogestionado.</p>
+            </div>
+            <div class="row g-4" id="roles-container">
+                <div class="col-md-4">
+                    <div class="role-card" data-role="po">
+                        <div class="role-icon"><i class="bi bi-gem"></i></div>
+                        <h3>Product Owner</h3>
+                        <p class="role-short">Maximiza el valor del producto.</p>
+                        <div class="role-details">
+                            <p>Responsable de gestionar el <strong>Product Backlog</strong> y asegurar que el equipo trabaje en lo más valioso para el cliente.</p>
+                            <ul>
+                                <li>Define el Product Goal.</li>
+                                <li>Prioriza los elementos del Backlog.</li>
+                                <li>Representa la voz del cliente.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="role-card" data-role="sm">
+                        <div class="role-icon"><i class="bi bi-shield-check"></i></div>
+                        <h3>Scrum Master</h3>
+                        <p class="role-short">Facilitador y Coach.</p>
+                        <div class="role-details">
+                            <p>Ayuda a que todos comprendan y apliquen la teoría y práctica de Scrum.</p>
+                            <ul>
+                                <li>Elimina impedimentos del equipo.</li>
+                                <li>Facilita los eventos de Scrum.</li>
+                                <li>Ayuda a la organización a adoptar la agilidad.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="role-card" data-role="dev">
+                        <div class="role-icon"><i class="bi bi-laptop"></i></div>
+                        <h3>Developers</h3>
+                        <p class="role-short">Creadores del Incremento.</p>
+                        <div class="role-details">
+                            <p>Personas comprometidas a crear cualquier aspecto de un Incremento útil en cada Sprint.</p>
+                            <ul>
+                                <li>Gestionan el Sprint Backlog.</li>
+                                <li>Sostienen la calidad (Definition of Done).</li>
+                                <li>Se auto-organizan para alcanzar el Sprint Goal.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events -->
+        <section class="ag-sec" id="eventos">
+            <div class="text-center mb-5">
+                <div class="mt-kick">EL RITMO DE SCRUM</div>
+                <h2 class="mt-h2">Eventos de Scrum</h2>
+                <p>Eventos diseñados para crear regularidad y reducir la necesidad de reuniones no planificadas.</p>
+            </div>
+            <div class="row g-4" id="eventos-container">
+                <!-- Sprint (Contenedor) -->
+                <div class="col-12">
+                    <div class="event-block highlighted">
+                        <div class="event-header">
+                            <h3><i class="bi bi-clock-history"></i> El Sprint</h3>
+                            <span class="badge bg-primary">Contenedor</span>
+                        </div>
+                        <div class="event-body">
+                            <p>El corazón de Scrum. Un ciclo de un mes o menos donde se crea un incremento de producto terminado.</p>
+                            <div class="event-meta">
+                                <span><strong>Duración:</strong> 1 a 4 semanas (fija)</span>
+                                <span><strong>Objetivo:</strong> Entregar valor tangible.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Planning -->
+                <div class="col-md-6">
+                    <div class="event-block">
+                        <div class="event-header">
+                            <h3><i class="bi bi-calendar-event"></i> Sprint Planning</h3>
+                        </div>
+                        <div class="event-body">
+                            <p>El equipo define <strong>qué</strong> se puede entregar y <strong>cómo</strong> se logrará el trabajo.</p>
+                            <div class="event-meta">
+                                <span><strong>Duración:</strong> Max 8h (Sprint 1 mes)</span>
+                                <span><strong>Participantes:</strong> Todo el Equipo Scrum.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Daily -->
+                <div class="col-md-6">
+                    <div class="event-block">
+                        <div class="event-header">
+                            <h3><i class="bi bi-chat-dots"></i> Daily Scrum</h3>
+                        </div>
+                        <div class="event-body">
+                            <p>Reunión diaria para inspeccionar el progreso hacia el Sprint Goal y adaptar el plan.</p>
+                            <div class="event-meta">
+                                <span><strong>Duración:</strong> 15 min</span>
+                                <span><strong>Participantes:</strong> Developers.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review -->
+                <div class="col-md-6">
+                    <div class="event-block">
+                        <div class="event-header">
+                            <h3><i class="bi bi-eye"></i> Sprint Review</h3>
+                        </div>
+                        <div class="event-body">
+                            <p>Inspección del resultado del Sprint y adaptación del Product Backlog basándose en el feedback.</p>
+                            <div class="event-meta">
+                                <span><strong>Duración:</strong> Max 4h (Sprint 1 mes)</span>
+                                <span><strong>Participantes:</strong> Equipo Scrum e Interesados.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Retro -->
+                <div class="col-md-6">
+                    <div class="event-block">
+                        <div class="event-header">
+                            <h3><i class="bi bi-arrow-repeat"></i> Sprint Retrospective</h3>
+                        </div>
+                        <div class="event-body">
+                            <p>El equipo analiza cómo trabajó en conjunto y planifica mejoras en calidad y efectividad.</p>
+                            <div class="event-meta">
+                                <span><strong>Duración:</strong> Max 3h (Sprint 1 mes)</span>
+                                <span><strong>Participantes:</strong> Todo el Equipo Scrum.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artifacts -->
+        <section class="ag-sec" id="artefactos">
+            <div class="text-center mb-5">
+                <div class="mt-kick">TRANSPARENCIA</div>
+                <h2 class="mt-h2">Artefactos y Compromisos</h2>
+                <p>Herramientas para hacer visible el trabajo y asegurar el alineamiento.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="artifact-card">
+                        <div class="artifact-head">
+                            <i class="bi bi-list-ul"></i>
+                            <h4>Product Backlog</h4>
+                        </div>
+                        <div class="artifact-body">
+                            <p>Lista ordenada de todo lo que podría mejorar el producto.</p>
+                            <div class="commitment-box">
+                                <strong>Compromiso:</strong> <span class="text-primary">Product Goal</span><br>
+                                <small>El objetivo a largo plazo del producto.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="artifact-card">
+                        <div class="artifact-head">
+                            <i class="bi bi-checklist"></i>
+                            <h4>Sprint Backlog</h4>
+                        </div>
+                        <div class="artifact-body">
+                            <p>Plan detallado para el Sprint actual, creado por los Developers.</p>
+                            <div class="commitment-box">
+                                <strong>Compromiso:</strong> <span class="text-primary">Sprint Goal</span><br>
+                                <small>El propósito único del Sprint.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="artifact-card">
+                        <div class="artifact-head">
+                            <i class="bi bi-box-seam"></i>
+                            <h4>Incremento</h4>
+                        </div>
+                        <div class="artifact-body">
+                            <p>Suma de todos los elementos del Product Backlog completados durante el Sprint.</p>
+                            <div class="commitment-box">
+                                <strong>Compromiso:</strong> <span class="text-primary">Definition of Done</span><br>
+                                <small>Criterios de calidad para decir que algo está terminado.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Timeline -->
+        <section class="ag-sec" id="cronograma">
+            <div class="text-center mb-5">
+                <div class="mt-kick">DINÁMICA DEL SPRINT</div>
+                <h2 class="mt-h2">Cronograma Interactivo</h2>
+                <p>Configurá la duración del Sprint para visualizar la cadencia de los eventos.</p>
+            </div>
+            <div class="sprint-container shadow-sm">
+                <div class="sprint-controls">
+                    <span class="control-label">Duración del Sprint:</span>
+                    <div class="duration-options">
+                        <button class="dur-btn active" data-weeks="1">1 Semana</button>
+                        <button class="dur-btn" data-weeks="2">2 Semanas</button>
+                        <button class="dur-btn" data-weeks="3">3 Semanas</button>
+                        <button class="dur-btn" data-weeks="4">4 Semanas</button>
+                    </div>
+                </div>
+                <div class="sprint-timeline" id="scrum-timeline">
+                    <div class="sprint-track"></div>
+                    <!-- Eventos generados por JS -->
+                </div>
+                <p class="sprint-caption mt-3">Hacé clic en los puntos para conocer los detalles de cada evento.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-foot">© 2026 ScrumMates · Procesos de desarrollo</footer>
+
+    <!-- Modal para eventos del cronograma -->
+    <div class="modal fade" id="event-detail-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="event-title">Evento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <strong class="d-block text-primary">Objetivo:</strong>
+                        <span id="event-goal"></span>
+                    </div>
+                    <div class="mb-3">
+                        <strong class="d-block text-primary">Participantes:</strong>
+                        <span id="event-participants"></span>
+                    </div>
+                    <div class="mb-0">
+                        <strong class="d-block text-primary">Duración sugerida:</strong>
+                        <span id="event-duration"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/navbar.js" defer></script>
+    <script src="../JS/scrum.js" defer></script>
+</body>
+
+</html>
