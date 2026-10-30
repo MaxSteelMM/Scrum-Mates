@@ -285,7 +285,7 @@ html {
   position: relative;
   text-align: center;
 }
-.sprint-event {
+.sprint-line .sprint-event {
   position: relative;
   width: 100%;
   padding: 26px 8px 8px;
@@ -296,7 +296,7 @@ html {
   color: var(--deep-twilight);
   cursor: pointer;
 }
-.sprint-event::before {
+.sprint-line .sprint-event::before {
   content: "";
   position: absolute;
   top: 3px;
@@ -309,10 +309,10 @@ html {
   border: 4px solid var(--c);
   transition: transform 0.15s;
 }
-.sprint-event:hover::before {
+.sprint-line .sprint-event:hover::before {
   transform: translateX(-50%) scale(1.2);
 }
-.sprint-event:focus-visible {
+.sprint-line .sprint-event:focus-visible {
   outline: 3px solid var(--turquoise-surf);
   outline-offset: 2px;
   border-radius: 10px;
@@ -519,7 +519,7 @@ html {
   html {
     scroll-behavior: auto;
   }
-  .sprint-event::before,
+  .sprint-line .sprint-event::before,
   .toc__bar i {
     transition: none;
   }

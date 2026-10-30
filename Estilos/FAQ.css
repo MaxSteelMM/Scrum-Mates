@@ -56,11 +56,15 @@
 
 .faq-item.active .faq-answer {
     max-height: 500px; /* Valor suficiente para el contenido */
-    padding-bottom: 1.25rem;
 }
 
 .faq-content {
     padding: 0 1.25rem 1.25rem;
     color: #6c757d;
     line-height: 1.6;
+}
+
+.faq-question:focus-visible {
+    outline: 3px solid #00b4d8;
+    outline-offset: -3px;
 }

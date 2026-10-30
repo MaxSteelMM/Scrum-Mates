@@ -231,56 +231,80 @@
 
 .sprint-timeline {
     position: relative;
-    height: 120px;
+    height: 150px;
     background: var(--mt-bg);
-    border-radius: 15px;
+    border-radius: 12px;
     border: 2px solid var(--mt-line);
-    margin: 20px 0;
-    display: flex;
-    align-items: center;
-    padding: 0 40px;
+    margin: 1.5rem 0 1rem;
 }
 
 .sprint-track {
     position: absolute;
     height: 4px;
-    background: var(--bright-teal-blue);
+    background: var(--sprint-accent, #0077b6);
     top: 50%;
-    left: 40px;
-    right: 40px;
+    left: 0;
+    right: 0;
     transform: translateY(-50%);
     z-index: 1;
 }
 
-.sprint-event {
+/* Cada evento es un <button> (accesible con teclado) */
+.sprint-timeline .sprint-event {
     position: absolute;
     top: 50%;
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border: 4px solid var(--bright-teal-blue);
-    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    background: none;
+    transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 2;
-    transform: translate(-50%, -50%);
-    transition: 0.3s;
+    border-radius: 50%;
 }
 
-.sprint-event:hover {
-    background: var(--bright-teal-blue);
-    transform: translate(-50%, -50%) scale(1.3);
+.sprint-timeline .event-dot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 4px solid var(--sprint-accent, #0077b6);
+    border-radius: 50%;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.sprint-event::after {
-    content: attr(data-label);
+.sprint-timeline .sprint-event:hover .event-dot,
+.sprint-timeline .sprint-event:focus-visible .event-dot {
+    background: var(--sprint-accent, #0077b6);
+    transform: scale(1.2);
+}
+
+.sprint-timeline .sprint-event:focus-visible {
+    outline: 3px solid #90e0ef;
+    outline-offset: 3px;
+}
+
+/* Etiquetas alternadas abajo / arriba para que no se superpongan */
+.sprint-timeline .event-label {
     position: absolute;
-    top: 25px;
     left: 50%;
+    top: calc(100% + 8px);
     transform: translateX(-50%);
-    white-space: nowrap;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--deep-twilight);
+    width: 92px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #495057;
+}
+.sprint-timeline .sprint-event.is-up .event-label { top: auto; bottom: calc(100% + 8px); }
+.sprint-timeline .sprint-event.is-start .event-label { left: 0; transform: none; text-align: left; }
+.sprint-timeline .sprint-event.is-end .event-label { left: auto; right: 0; transform: none; text-align: right; }
+
+@media (prefers-reduced-motion: reduce) {
+    .sprint-timeline .event-dot { transition: none; }
 }
 
 .sprint-caption {

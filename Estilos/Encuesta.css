@@ -66,8 +66,20 @@
     box-shadow: 0 0 0 2px #0077b6;
 }
 
+.option-card { position: relative; }
+
+/* Oculto a la vista pero accesible con teclado */
 .option-card input {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+.option-card:focus-within {
+    outline: 3px solid #00b4d8;
+    outline-offset: 2px;
 }
 
 .result-box {

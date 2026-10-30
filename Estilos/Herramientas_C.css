@@ -1,44 +1,5 @@
 /* ===== Herramientas de Calidad ===== */
 
-:root{
-    /* CSS HEX */
-    --deep-twilight: #03045eff;
-    --french-blue: #023e8aff;
-    --bright-teal-blue: #0077b6ff;
-    --blue-green: #0096c7ff;
-    --turquoise-surf: #00b4d8ff;
-    --sky-aqua: #48cae4ff;
-    --frosted-blue: #90e0efff;
-    --frosted-blue-2: #ade8f4ff;
-    --light-cyan: #caf0f8ff;
-}
-
-.breadcrumb-bar{
-    max-width: 1200px;
-    margin: 20px auto 0;
-    padding: 0 5.5%;
-    font-size: 14px;
-    color: var(--bright-teal-blue);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.breadcrumb-bar a{ color: var(--bright-teal-blue); text-decoration:none; }
-.breadcrumb-bar a:hover{ color: var(--deep-twilight); }
-.breadcrumb-bar .crumb-current{ color: var(--deep-twilight); font-weight:500; }
-.breadcrumb-bar .crumb-sep{ color: var(--frosted-blue); }
-
-.nav-search{
-    margin-left: 12px;
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    background: var(--light-cyan);
-    display:flex; align-items:center; justify-content:center;
-    color: var(--french-blue);
-    text-decoration:none;
-}
-.active-link{ color: var(--turquoise-surf) !important; font-weight:600; }
-
 /* Hero */
 .hc-hero{
     display:flex;
@@ -163,15 +124,6 @@
     display: none !important;
 }
 
-.hc-badge{
-    background: var(--light-cyan);
-    color: var(--french-blue);
-    font-size:0.75rem;
-    font-weight:700;
-    padding: 4px 12px;
-    border-radius: 20px;
-}
-
 .hc-grid{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
@@ -253,13 +205,3 @@
     color: var(--frosted-blue-2);
 }
 .hc-checklist li i{ color: var(--sky-aqua); margin-top:2px; }
-.btn-guia{
-    background:#fff;
-    color: var(--french-blue);
-    text-align:center;
-    padding:10px 16px;
-    border-radius:10px;
-    font-weight:700;
-    text-decoration:none;
-    display:inline-flex; align-items:center; justify-content:center; gap:6px;
-}

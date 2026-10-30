@@ -275,7 +275,7 @@
     .cards-Inicio {
     display: grid;
 
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
     gap: 15px;
     }
@@ -547,35 +547,18 @@
     }
 
     @media (max-width: 1100px) {
-    .nav ul {
-        gap: 20px;
-    }
+    .nav ul { gap: 20px; }
+    .cards-Inicio { grid-template-columns: repeat(3, 1fr); }
+    .hero h1 { font-size: 38px; }
+}
 
-    @media (max-width: 1100px) {
-    .nav ul {
-        gap: 20px;
-    }
-
-    .cards-Inicio {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-    }
-
-    @media (max-width: 750px) {
+@media (max-width: 750px) {
     .nav {
         height: 68px;
         padding: 0 20px;
         justify-content: center;
     }
-
-    .hamburger {
-        display: flex;
-    }
-
+    .hamburger { display: flex; }
     .nav ul {
         position: absolute;
         top: 68px;
@@ -589,21 +572,17 @@
         padding: 20px 0;
         border-bottom: 1px solid #e5eaf2;
         z-index: 100;
-
-        /* Animación */
         opacity: 0;
         visibility: hidden;
         transform: translateY(-15px);
         transition: all 0.3s ease-in-out;
         display: flex;
     }
-
     #menu-toggle:checked ~ ul {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
     }
-
     .hero {
         padding: 45px 7%;
         text-align: center;
@@ -611,38 +590,60 @@
         flex-direction: column;
         align-items: center;
     }
-
-    .hero h1 {
-        width: 100%;
-        font-size: 34px;
-        margin: 0 auto 20px;
-    }
-
-    .hero p {
-        width: 100%;
-        margin: 0 auto 25px;
-    }
-
-    .hero button {
-        margin: 0 auto;
-    }
-
-    .hero button + button {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-
-    .cards-Inicio {
-        grid-template-columns: 1fr;
-    }
-
-    .cards-abajo {
-        grid-template-columns: 1fr;
-    }
-    }
-
+    .hero h1 { width: 100%; font-size: 34px; margin: 0 auto 20px; }
+    .hero p { width: 100%; margin: 0 auto 25px; }
+    .hero button { margin: 0 auto; }
+    .hero button + button { margin-left: 0; margin-top: 10px; }
+    .cards-Inicio { grid-template-columns: 1fr; }
+    .cards-abajo { grid-template-columns: 1fr; }
+}
 
 .acordeon_preguntas {
     padding: 45px 5.5% 60px;
 }
+
+/* =====================================================
+   Variables y estilos compartidos (.mt-*)
+   Antes vivían solo en Modelos_tradicionales.css y por eso
+   Kanban, Metodologías y Scrum quedaban sin colores.
+   ===================================================== */
+:root {
+  --mt-txt: #3b5a8c;
+  --mt-bg: #f4fbfe;
+  --mt-line: #d5eef6;
+  --mt-ok: #13804a;
+  --mt-ok-bg: #eaf8f0;
+  --mt-ok-line: #b5e5c9;
+  --mt-bad: #c2372f;
+  --mt-bad-bg: #fdeeed;
+  --mt-bad-line: #f4c2be;
 }
+html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+body.mt {
+  --bs-primary: var(--bright-teal-blue);
+  --bs-primary-rgb: 0, 119, 182;
+  --bs-body-color: var(--mt-txt);
+  --bs-link-color: var(--bright-teal-blue);
+  --bs-border-color: var(--mt-line);
+  --bs-body-font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-family: var(--bs-body-font-family);
+  background: #fff;
+  color: var(--mt-txt);
+}
+.mt h1, .mt h2, .mt h3, .mt h4, .mt h5 { color: var(--deep-twilight); font-family: inherit; }
+.mt a { text-decoration: none; }
+.mt :focus-visible { outline: 3px solid var(--turquoise-surf); outline-offset: 2px; border-radius: 8px; }
+.mt-main { padding-bottom: 20px; }
+.mt-kick { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; color: var(--bright-teal-blue); }
+.mt-h2 { font-size: 28px; font-weight: 800; margin: 4px 0 0; }
+.mt-o {
+  width: 30px; height: 30px; border-radius: 9px;
+  background: var(--light-cyan); color: var(--bright-teal-blue);
+  display: grid; place-items: center; flex: none;
+}
+.mt-foot {
+  margin-top: 50px; padding: 24px 0;
+  background: var(--deep-twilight); color: var(--frosted-blue-2);
+  font-size: 12px; text-align: center;
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

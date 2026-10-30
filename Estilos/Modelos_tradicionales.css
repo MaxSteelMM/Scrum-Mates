@@ -1,63 +1,5 @@
+/* Paleta y estilos base (.mt-*) ahora viven en Style.css */
 /* ===== Paleta ===== */
-:root {
-  --deep-twilight: #03045e;
-  --french-blue: #023e8a;
-  --bright-teal-blue: #0077b6;
-  --blue-green: #0096c7;
-  --turquoise-surf: #00b4d8;
-  --sky-aqua: #48cae4;
-  --frosted-blue: #90e0ef;
-  --frosted-blue-2: #ade8f4;
-  --light-cyan: #caf0f8;
-
-  --mt-txt: #3b5a8c;
-  --mt-bg: #f4fbfe;
-  --mt-line: #d5eef6;
-  --mt-ok: #13804a;
-  --mt-ok-bg: #eaf8f0;
-  --mt-ok-line: #b5e5c9;
-  --mt-bad: #c2372f;
-  --mt-bad-bg: #fdeeed;
-  --mt-bad-line: #f4c2be;
-
-  /* Bootstrap */
-  --bs-primary: var(--bright-teal-blue);
-  --bs-primary-rgb: 0, 119, 182;
-  --bs-body-color: var(--mt-txt);
-  --bs-link-color: var(--bright-teal-blue);
-  --bs-border-color: var(--mt-line);
-  --bs-body-font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-}
-
-body.mt {
-  font-family: var(--bs-body-font-family);
-  background: #fff;
-  color: var(--mt-txt);
-}
-.mt h1,
-.mt h2,
-.mt h3,
-.mt h4,
-.mt h5 {
-  color: var(--deep-twilight);
-  font-family: inherit;
-}
-.mt a {
-  text-decoration: none;
-}
-.mt :focus-visible {
-  outline: 3px solid var(--turquoise-surf);
-  outline-offset: 2px;
-  border-radius: 8px;
-}
-.mt-main {
-  padding-bottom: 20px;
-}
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 16px;
-}
-
 /* ===== Migas ===== */
 .mt-crumb {
   font-size: 12px;
@@ -73,7 +15,7 @@ html {
   border: 1px solid var(--mt-line);
   border-radius: 22px;
   padding: 28px 18px;
-  margin: 0 0 38px;
+  margin: 30px 0 38px;
   position: relative;
   overflow: hidden;
 }
@@ -126,18 +68,6 @@ html {
 }
 
 /* ===== Títulos de sección ===== */
-.mt-kick {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--bright-teal-blue);
-}
-.mt-h2 {
-  font-size: 28px;
-  font-weight: 800;
-  margin: 4px 0 0;
-}
-
 /* ===== Pestañas (carrusel) ===== */
 .mt-arr {
   width: 32px;
@@ -195,11 +125,6 @@ html {
   box-shadow: 0 6px 18px rgba(2, 62, 138, 0.12);
 }
 
-.align-items-center {
-  align-items: center !important;
-  margin-top: 30px !important;
-}
-
 /* ===== Tarjeta principal ===== */
 .mt-stage {
   border: 1.5px solid var(--acc);
@@ -208,12 +133,8 @@ html {
   width: 100%;
 }
 .mt-stage .row {
-  width: 100%;
-  margin: auto;
+  margin: 0;
   align-items: center;
-  display: flex;
-  justify-content: center;
-  scale: inherit;
 }
 .mt-sl {
   background: linear-gradient(180deg, var(--mt-bg), var(--light-cyan));
@@ -446,7 +367,7 @@ html {
   background: var(--bright-teal-blue);
 }
 .mt-why {
-  margin: 0 0 56px;
+  margin: 30px 0 56px;
   background: var(--mt-bg);
   border: 1px solid var(--mt-line);
   border-radius: 14px;
@@ -469,17 +390,6 @@ html {
   color: var(--mt-txt);
   font-size: 12px;
 }
-.mt-o {
-  width: 30px;
-  height: 30px;
-  border-radius: 9px;
-  background: var(--light-cyan);
-  color: var(--bright-teal-blue);
-  display: grid;
-  place-items: center;
-  flex: none;
-}
-
 /* ===== Resumen ===== */
 .mt-cd {
   display: block;
@@ -549,15 +459,6 @@ html {
   font-weight: 700;
 }
 
-.mt-foot {
-  margin-top: 50px;
-  padding: 24px 0;
-  background: var(--deep-twilight);
-  color: var(--frosted-blue-2);
-  font-size: 12px;
-  text-align: center;
-}
-
 @media (max-width: 991px) {
   .mt-tab {
     flex-direction: column;
@@ -575,9 +476,7 @@ html {
 }
 @media (min-width: 992px) {
   .mt-sl {
-    flex: 0 0 auto;
-    width: 100% !important;
-    padding:50px;
+    padding: 50px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
