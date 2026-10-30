@@ -648,7 +648,6 @@ body.mt {
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-/* Todo el botón es clicable (antes solo respondía el texto del <a> interno) */
 .hero button a::after,
 .card-abajo-1 button a::after,
 .card-abajo-2 button a::after {

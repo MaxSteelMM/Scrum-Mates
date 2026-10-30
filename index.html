@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./Estilos/Style.css">
   <link rel="stylesheet" href="./Estilos/Navbar.css">
+  <link rel="stylesheet" href="./Estilos/Footer.css">
 </head>
 
 <body>
@@ -70,7 +71,57 @@
     </div>
   </div>
 
-  <footer class="mt-foot">© 2026 ScrumMates. Todos los derechos reservados.</footer>
+ <!-- ===== FOOTER para index.html (raíz del sitio) =====
+     1) En el <head>, agregá:  <link rel="stylesheet" href="./Estilos/Footer.css">
+     2) Pegá este bloque justo antes de los <script> del final del <body>.
+     3) Borrá el footer viejo (<footer class="mt-foot"> o el que tenía estilos en línea). -->
+<footer class="sm-footer">
+  <div class="sm-footer__inner">
+
+    <div class="sm-footer__brand">
+      <strong>Scrum<span>Mates</span></strong>
+      <p>Calidad de software y metodologías ágiles explicadas de forma clara, con ejemplos y herramientas para practicar.</p>
+    </div>
+
+    <nav class="sm-footer__col" aria-label="Contenidos">
+      <h3>Contenidos</h3>
+      <ul>
+        <li><a href="./Paginas/Calidad.html">Calidad del software</a></li>
+        <li><a href="./Paginas/Ciclo_vida.html">Ciclo de vida (SDLC)</a></li>
+        <li><a href="./Paginas/Modelos_Tradicionales.html">Modelos tradicionales</a></li>
+        <li><a href="./Paginas/Metodologias.html">Metodologías ágiles</a></li>
+      </ul>
+    </nav>
+
+    <nav class="sm-footer__col" aria-label="Para practicar">
+      <h3>Para practicar</h3>
+      <ul>
+        <li><a href="./Paginas/Herramientas_calidad.html">Herramientas de calidad</a></li>
+        <li><a href="./Paginas/Comparador.html">Comparador de metodologías</a></li>
+        <li><a href="./Paginas/Encuesta.html">Encuesta de metodología</a></li>
+        <li><a href="./Paginas/Ejercicios.html">Ejercicios</a></li>
+      </ul>
+    </nav>
+
+    <nav class="sm-footer__col" aria-label="Ayuda">
+      <h3>Ayuda</h3>
+      <ul>
+        <li><a href="./Paginas/Glosario.html">Glosario</a></li>
+        <li><a href="./Paginas/FAQ.html">Preguntas frecuentes</a></li>
+        <li><a href="./Paginas/Recursos.html">Recursos</a></li>
+        <li><a href="./Paginas/Nosotros.html">Nosotros</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="sm-footer__bottom">
+    <div class="sm-footer__bottom-inner">
+      <p>© 2026 ScrumMates · EPET 20. Todos los derechos reservados.</p>
+      <p>¿Dudas o sugerencias? <a href="./Paginas/Contacto.html">Escribinos</a></p>
+    </div>
+  </div>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="JS/navbar.js" defer></script>
