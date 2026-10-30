@@ -81,6 +81,17 @@
             };
         });
 
+        // Volver a mostrar el formulario vacío (antes se recargaba toda la página)
+        const resetBtn = $('#reset-form');
+        if (resetBtn) resetBtn.onclick = () => {
+            form.reset();
+            ['name', 'email', 'subject', 'message'].forEach(id => showError(id, false));
+            confirmation.style.display = 'none';
+            form.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Enviar Mensaje <i class="bi bi-send-fill ms-2"></i>';
+        };
+
         form.onsubmit = e => {
             e.preventDefault();
 
@@ -88,7 +99,6 @@
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = 'Enviando... <i class="bi bi-hourglass-split ms-2"></i>';
 
-                // Simulate network delay
                 setTimeout(() => {
                     form.style.display = 'none';
                     confirmation.style.display = 'block';

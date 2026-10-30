@@ -2,6 +2,8 @@
 (function () {
     'use strict';
 
+    const esc = v => String(v).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
     const TRIGGER = '[data-lightbox]';
     let modalEl, modal, carouselEl, carousel, countEl, lastFocus, builtFor = 0;
 
@@ -10,7 +12,7 @@
             const img = btn.querySelector('img');
             const cap = btn.closest('figure').querySelector('figcaption');
             return '<div class="carousel-item' + (i === 0 ? ' active' : '') + '">' +
-                '<img src="' + (btn.dataset.full || img.currentSrc || img.src) + '" class="d-block mx-auto img-fluid" alt="' + img.alt + '">' +
+                '<img src="' + (btn.dataset.full || img.currentSrc || img.src) + '" class="d-block mx-auto img-fluid" alt="' + esc(img.alt) + '">' +
                 '<p class="text-center text-white mt-3 px-5 mb-0">' + cap.innerHTML + '</p></div>';
         }).join('');
         const multi = items.length > 1;
@@ -20,6 +22,7 @@
             modalEl.className = 'modal fade';
             modalEl.id = 'mtLightbox';
             modalEl.tabIndex = -1;
+            modalEl.setAttribute('role', 'dialog');
             modalEl.setAttribute('aria-label', 'Vista ampliada de la ilustración');
             modalEl.setAttribute('aria-hidden', 'true');
             document.body.appendChild(modalEl);

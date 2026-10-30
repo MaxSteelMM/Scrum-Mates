@@ -1,6 +1,4 @@
-/* Modelos Tradicionales · pestañas + flechas + tarjetas resumen
-   Usa las clases de Modelos_tradicionales.css y las pestañas de Bootstrap 5 (bootstrap.bundle.js).
-   Rellena: #mt-tabs, #mt-panels, #dots y #cards. Usa los botones #prev y #next. */
+
 (function () {
     'use strict';
 
@@ -78,7 +76,7 @@
         `<div class="tab-pane fade${i === 0 ? ' show active' : ''}" id="${m.id}" role="tabpanel" aria-labelledby="tab-${m.id}" tabindex="0" style="--acc:${m.color};--c:${m.color}">
             <div class="mt-stage overflow-hidden">
                 <div class="row">
-                    <div class="mt-sl">
+                    <div class="col-12 mt-sl">
                         <span class="mt-ic">${icon(m.id)}</span>
                         <h3>${m.nombre}</h3>
                         <p>${m.lema}</p>

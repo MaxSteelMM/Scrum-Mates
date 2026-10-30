@@ -87,7 +87,7 @@
       category: "Calidad",
     },
     {
-      term: "Normalization",
+      term: "Normalización",
       definition:
         "Proceso de organizar los datos en una base de datos para reducir la redundancia.",
       category: "Desarrollo",
@@ -160,7 +160,7 @@
     },
   ];
 
-  const removeAccents = (text) => text.normalize("NFD").replace(/[̀-ͯ]/g, "");
+  const removeAccents = (text) => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
   const renderTerms = (filterText = "", activeLetter = "") => {
     const grid = $("#terms-grid");
@@ -177,9 +177,9 @@
         const letterMatch = activeLetter
           ? item.term.toUpperCase().startsWith(activeLetter)
           : true;
-        return termMatch || defMatch;
+        return (termMatch || defMatch) && letterMatch;
       })
-      .sort((a, b) => a.term.localeCompare(b.term));
+      .sort((a, b) => a.term.localeCompare(b.term, "es"));
 
     if (filtered.length === 0) {
       grid.innerHTML = `<div class="no-results">
@@ -232,6 +232,7 @@
           .querySelectorAll(".letter-btn")
           .forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
+        $("#glossary-search").value = "";
         renderTerms("", btn.dataset.letter);
       };
     });

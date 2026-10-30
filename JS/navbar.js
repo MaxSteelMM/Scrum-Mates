@@ -6,7 +6,7 @@
      /index.html
      /Paginas/*.html
      /JS/nav.js        <- este archivo
-     /CSS/nav.css
+     /Estilos/Navbar.css
      /Img/Logo/LOGO-SCRUMATES.svg
    ========================================================== */
 (function () {
@@ -104,10 +104,10 @@
 
   /* ---------- 4. MONTAJE ---------- */
   // CSS se carga solo, no hace falta <link> en cada página
-  if (!document.querySelector('link[data-site-nav]')) {
+  if (!document.querySelector('link[data-site-nav], link[href*="Navbar.css"]')) {
     var css = document.createElement('link');
     css.rel = 'stylesheet';
-    css.href = url('CSS/nav.css').href;
+    css.href = url('Estilos/Navbar.css').href;
     css.setAttribute('data-site-nav', '');
     document.head.appendChild(css);
   }

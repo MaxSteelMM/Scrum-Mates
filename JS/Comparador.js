@@ -89,6 +89,8 @@
     ];
 
     const methods = Object.keys(comparativaData);
+    const NAMES = { V: 'Modelo en V' };
+    const name = m => NAMES[m] || m;
     const selected = new Set(['Scrum', 'Kanban', 'XP']); // selección inicial
 
     const renderCell = (row, m) => {
@@ -115,7 +117,7 @@
         container.innerHTML = methods.map(m => `
             <label class="method-checkbox ${selected.has(m) ? 'active' : ''}">
                 <input type="checkbox" value="${m}" class="method-check" ${selected.has(m) ? 'checked' : ''}>
-                <span><strong>${m}</strong><small>${comparativaData[m].sub}</small></span>
+                <span><strong>${name(m)}</strong><small>${comparativaData[m].sub}</small></span>
             </label>
         `).join('');
 
@@ -123,7 +125,7 @@
             check.onchange = () => {
                 if (check.checked) selected.add(check.value);
                 else selected.delete(check.value);
-                refresh();
+                update();
             };
         });
     };
@@ -156,7 +158,7 @@
                             <th>Criterio<small>${cols.length} columnas activas</small></th>
                             ${cols.map(m => `
                                 <th>
-                                    <span class="th-title">${m}</span>
+                                    <span class="th-title">${name(m)}</span>
                                     <span class="th-tag">${comparativaData[m].tag}</span>
                                 </th>`).join('')}
                         </tr>
@@ -172,8 +174,16 @@
             </div>`;
     };
 
-    const refresh = () => {
-        renderSelectors();
+    // Sincroniza los checkboxes sin volver a crearlos (así no se pierde el foco del teclado)
+    const syncSelectors = () => {
+        document.querySelectorAll('.method-check').forEach(c => {
+            c.checked = selected.has(c.value);
+            c.closest('.method-checkbox').classList.toggle('active', c.checked);
+        });
+    };
+
+    const update = () => {
+        syncSelectors();
         updateCounter();
         updateTable();
     };
@@ -181,9 +191,10 @@
     const init = () => {
         const all = $('#select-all');
         const clear = $('#clear-selection');
-        if (all) all.onclick = () => { methods.forEach(m => selected.add(m)); refresh(); };
-        if (clear) clear.onclick = () => { selected.clear(); refresh(); };
-        refresh();
+        if (all) all.onclick = () => { methods.forEach(m => selected.add(m)); update(); };
+        if (clear) clear.onclick = () => { selected.clear(); update(); };
+        renderSelectors();
+        update();
     };
 
     if (document.readyState === 'loading') {

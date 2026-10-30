@@ -15,12 +15,14 @@
 
     const COLS = ['todo', 'progress', 'done'];
     const COL_NAMES = { todo: 'Por Hacer', progress: 'En Proceso', done: 'Hecho' };
+    const STATUS_LABEL = { todo: 'Pendiente', progress: 'En curso', done: 'Hecha' };
     const STORAGE_KEY = 'kanban_state';
     const WIP_KEY = 'kanban_wip';
     const DEFAULT_WIP = 3;
 
     /* ===== Estado ===== */
     let state = { todo: [], progress: [], done: [] };
+    let draggingId = null;
 
     /* ===== Límite WIP (solo aplica a "En Proceso") ===== */
     const wipInput = () => $('#wip-input');
@@ -33,7 +35,7 @@
 
     const getLimit = colId => (colId === 'progress' ? getWip() : Infinity);
 
-    /* ===== Mensajes de estado ===== */
+    /* ===== Mensajes (tipos que entiende Kanban.css: info | ok | blocked) ===== */
     const setStatus = (msg, type = 'info') => {
         const el = $('#board-status');
         if (!el) return;
@@ -41,24 +43,38 @@
         el.textContent = msg;
     };
 
+    // Cuadro guía: info | full | done
     const updateGuide = () => {
         const guide = $('#wip-guide');
         if (!guide) return;
         const used = state.progress.length;
         const limit = getWip();
-        if (used > limit) {
-            guide.textContent = `Hay ${used} tareas en proceso y el límite es ${limit}: terminá alguna antes de empezar otra.`;
+        let type = 'info';
+        let icon = 'bi-info-circle';
+        let msg = `Podés empezar ${limit - used} tarea(s) más en «En Proceso».`;
+
+        if (state.done.length === INITIAL_CARDS.length) {
+            type = 'done';
+            icon = 'bi-trophy';
+            msg = '¡Tablero completo! Todas las tareas están en «Hecho».';
+        } else if (used > limit) {
+            type = 'full';
+            icon = 'bi-exclamation-triangle';
+            msg = `Hay ${used} tareas en proceso y el límite es ${limit}: terminá alguna antes de empezar otra.`;
         } else if (used === limit) {
-            guide.textContent = `«En Proceso» está lleno (${used}/${limit}). Hay que terminar una tarea para empezar otra.`;
-        } else {
-            guide.textContent = `Podés empezar ${limit - used} tarea(s) más en «En Proceso».`;
+            type = 'full';
+            icon = 'bi-exclamation-triangle';
+            msg = `«En Proceso» está lleno (${used}/${limit}). Hay que terminar una tarea para empezar otra.`;
         }
+        guide.dataset.type = type;
+        guide.innerHTML = `<i class="bi ${icon}" aria-hidden="true"></i><span>${msg}</span>`;
     };
 
     /* ===== Persistencia ===== */
     const isValidState = s =>
         s && COLS.every(c => Array.isArray(s[c])) &&
-        COLS.flatMap(c => s[c]).every(id => INITIAL_CARDS.some(card => card.id === id));
+        COLS.flatMap(c => s[c]).every(id => INITIAL_CARDS.some(card => card.id === id)) &&
+        COLS.flatMap(c => s[c]).length === INITIAL_CARDS.length;
 
     const resetState = () => ({
         todo: INITIAL_CARDS.map(c => c.id),
@@ -76,11 +92,7 @@
     const loadState = () => {
         try {
             const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-            if (isValidState(saved)) {
-                state = saved;
-            } else {
-                state = resetState();
-            }
+            state = isValidState(saved) ? saved : resetState();
             const wip = parseInt(localStorage.getItem(WIP_KEY), 10);
             if (Number.isFinite(wip)) wipInput().value = Math.min(6, Math.max(1, wip));
         } catch (_) {
@@ -102,7 +114,7 @@
             setTimeout(() => colEl.classList.remove('wip-blocked'), 500);
             setStatus(
                 `Límite WIP alcanzado en «${COL_NAMES[targetColId]}» (${limit}). Terminá una tarea antes de empezar otra.`,
-                'warn'
+                'blocked'
             );
             return false;
         }
@@ -130,7 +142,7 @@
     /* ===== Render ===== */
     const createCard = (cardData, colId) => {
         const el = document.createElement('div');
-        el.className = 'kanban-card';
+        el.className = 'kanban-card' + (colId === 'progress' ? ' state-progress' : colId === 'done' ? ' state-done' : '');
         el.id = cardData.id;
         el.draggable = true;
         el.tabIndex = 0;
@@ -139,26 +151,35 @@
         const idx = COLS.indexOf(colId);
         const prev = idx > 0 ? COLS[idx - 1] : null;
         const next = idx < COLS.length - 1 ? COLS[idx + 1] : null;
+        const stCls = colId === 'progress' ? ' st-progress' : colId === 'done' ? ' st-done' : '';
 
         el.innerHTML = `
-            <span class="card-id">${cardData.id}</span>
+            <div class="card-head">
+                <span class="card-id">${cardData.id}</span>
+                <span class="card-status${stCls}">${STATUS_LABEL[colId]}</span>
+            </div>
             <span class="card-title">${cardData.title}</span>
             <p class="card-desc">${cardData.desc}</p>
             <div class="card-actions">
-                ${prev ? `<button type="button" class="btn btn-sm btn-outline-secondary" data-dir="-1"
-                    aria-label="Mover a ${COL_NAMES[prev]}"><i class="bi bi-arrow-left" aria-hidden="true"></i></button>` : ''}
-                ${next ? `<button type="button" class="btn btn-sm btn-outline-primary" data-dir="1"
-                    aria-label="Mover a ${COL_NAMES[next]}"><i class="bi bi-arrow-right" aria-hidden="true"></i></button>` : ''}
+                ${prev ? `<button type="button" class="card-btn" data-dir="-1"
+                    aria-label="Mover a ${COL_NAMES[prev]}"><i class="bi bi-arrow-left" aria-hidden="true"></i> ${COL_NAMES[prev]}</button>` : ''}
+                ${next ? `<button type="button" class="card-btn" data-dir="1"
+                    aria-label="Mover a ${COL_NAMES[next]}">${COL_NAMES[next]} <i class="bi bi-arrow-right" aria-hidden="true"></i></button>` : ''}
             </div>
         `;
 
         // Drag and drop
         el.addEventListener('dragstart', e => {
+            draggingId = cardData.id;
             e.dataTransfer.setData('text/plain', cardData.id);
             e.dataTransfer.effectAllowed = 'move';
-            el.style.opacity = '0.5';
+            el.classList.add('dragging');
         });
-        el.addEventListener('dragend', () => { el.style.opacity = '1'; });
+        el.addEventListener('dragend', () => {
+            draggingId = null;
+            el.classList.remove('dragging');
+            COLS.forEach(c => $(`#col-${c}`).classList.remove('drag-over', 'drag-reject'));
+        });
 
         // Botones
         el.querySelectorAll('button[data-dir]').forEach(btn => {
@@ -176,10 +197,13 @@
     };
 
     const renderColumn = colId => {
+        const col = $(`#col-${colId}`);
         const list = $(`#list-${colId}`);
         const count = $(`#count-${colId}`);
         const cards = state[colId];
         const limit = getLimit(colId);
+        const hasLimit = Number.isFinite(limit);
+        const full = hasLimit && cards.length >= limit;
 
         list.innerHTML = '';
         cards.forEach(cardId => {
@@ -187,9 +211,10 @@
             if (cardData) list.appendChild(createCard(cardData, colId));
         });
 
-        const hasLimit = Number.isFinite(limit);
+        list.classList.toggle('is-empty', cards.length === 0);
+        col.classList.toggle('wip-full', full);
         count.textContent = hasLimit ? `${cards.length} / ${limit}` : String(cards.length);
-        count.classList.toggle('over', hasLimit && cards.length >= limit);
+        count.classList.toggle('badge-full', full);
         count.setAttribute(
             'aria-label',
             hasLimit
@@ -213,17 +238,22 @@
             col.addEventListener('dragover', e => {
                 e.preventDefault();
                 e.dataTransfer.dropEffect = 'move';
-                col.classList.add('drag-over');
+                // Si el destino está lleno se marca en rojo, pero el drop sigue disparando el aviso
+                const origin = draggingId ? findColumn(draggingId) : null;
+                const rejected = !!draggingId && origin !== colId && state[colId].length >= getLimit(colId);
+                col.classList.toggle('drag-reject', rejected);
+                col.classList.toggle('drag-over', !rejected);
             });
 
             col.addEventListener('dragleave', e => {
-                if (!col.contains(e.relatedTarget)) col.classList.remove('drag-over');
+                if (!col.contains(e.relatedTarget)) col.classList.remove('drag-over', 'drag-reject');
             });
 
             col.addEventListener('drop', e => {
                 e.preventDefault();
-                col.classList.remove('drag-over');
+                col.classList.remove('drag-over', 'drag-reject');
                 const cardId = e.dataTransfer.getData('text/plain');
+                draggingId = null;
                 moveCard(cardId, colId);
             });
         });
@@ -237,7 +267,7 @@
             const used = state.progress.length;
             const limit = getWip();
             if (used > limit) {
-                setStatus(`El nuevo límite (${limit}) es menor que las tareas en proceso (${used}). Terminá alguna.`, 'warn');
+                setStatus(`El nuevo límite (${limit}) es menor que las tareas en proceso (${used}). Terminá alguna.`, 'blocked');
             } else {
                 setStatus(`Límite WIP actualizado a ${limit}.`, 'info');
             }
@@ -262,7 +292,6 @@
         setStatus('Tablero listo.', 'info');
     };
 
-    // El script se carga con "defer", pero por las dudas:
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {

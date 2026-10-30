@@ -61,7 +61,7 @@
             reason: 'Prioridad en la entrega continua y gestión de flujo de trabajo.'
         },
         waterfall: {
-            title: 'Modelo Cascada (Waterfall)',
+            title: 'Modelo en Cascada',
             desc: 'Un enfoque lineal es lo más seguro para tu caso. La planificación exhaustiva inicial garantiza que no haya sorpresas en el resultado final.',
             reason: 'Requisitos estables y estructura de proyecto predecible.'
         }
@@ -86,14 +86,16 @@
             </div>
         `).join('');
 
-        document.querySelectorAll('.option-card').forEach(card => {
-            card.onclick = () => {
+        document.querySelectorAll('.option-card input').forEach(input => {
+            input.addEventListener('change', () => {
+                const card = input.closest('.option-card');
                 const stepIdx = card.dataset.step;
-                document.querySelectorAll(`.step[id="step-${stepIdx}"] .option-card`).forEach(c => c.classList.remove('selected'));
+                document.querySelectorAll(`#step-${stepIdx} .option-card`).forEach(c => c.classList.remove('selected'));
                 card.classList.add('selected');
-                card.querySelector('input').checked = true;
-                userAnswers[stepIdx] = parseInt(card.dataset.opt);
-            };
+                userAnswers[stepIdx] = parseInt(card.dataset.opt, 10);
+                const err = $('#step-error');
+                if (err) err.textContent = '';
+            });
         });
     };
 
@@ -129,31 +131,43 @@
             }
         });
 
-        const total = scores.scrum + scores.kanban + scores.waterfall;
-        const percentages = {
-            scrum: Math.round((scores.scrum / total) * 100),
-            kanban: Math.round((scores.kanban / total) * 100),
-            waterfall: Math.round((scores.waterfall / total) * 100)
-        };
+        const keys = ['scrum', 'kanban', 'waterfall'];
+        const total = keys.reduce((n, k) => n + scores[k], 0) || 1;
 
-        const winner = Object.keys(percentages).reduce((a, b) => percentages[a] > percentages[b] ? a : b);
+        // Porcentajes que siempre suman 100 (método del mayor resto)
+        const percentages = {};
+        let acc = 0;
+        keys.forEach(k => { percentages[k] = Math.floor(scores[k] / total * 100); acc += percentages[k]; });
+        keys.map(k => [k, scores[k] / total * 100 - percentages[k]])
+            .sort((x, y) => y[1] - x[1])
+            .slice(0, 100 - acc)
+            .forEach(([k]) => { percentages[k]++; });
+
+        // Si hay empate se muestra el primero y se menciona el resto
+        const max = Math.max(...keys.map(k => scores[k]));
+        const tied = keys.filter(k => scores[k] === max);
+        const winner = tied[0];
         const rec = recommendations[winner];
+        const tieNote = tied.length > 1
+            ? `<p class="small mt-3 mb-0">También encaja muy bien: ${tied.slice(1).map(k => recommendations[k].title).join(' y ')}.</p>`
+            : '';
 
         const wizard = $('#wizard');
         wizard.innerHTML = `
             <div class="result-box">
                 <div class="recommendation-highlight">
                     <h2 class="fw-bold">La metodología ideal para ti es:</h2>
-                    <h1 class="display-4 fw-extra-bold">${rec.title}</h1>
+                    <h1 class="display-4 fw-bold">${rec.title}</h1>
                     <p class="lead">${rec.desc}</p>
                     <div class="badge bg-light text-dark p-2">Motivo: ${rec.reason}</div>
+                    ${tieNote}
                 </div>
 
                 <h4 class="fw-bold mt-5 mb-3">Puntajes de Coincidencia:</h4>
                 <div class="d-flex justify-content-center flex-wrap mb-4">
                     <div class="score-pill">Scrum: ${percentages.scrum}%</div>
                     <div class="score-pill">Kanban: ${percentages.kanban}%</div>
-                    <div class="score-pill">Waterfall: ${percentages.waterfall}%</div>
+                    <div class="score-pill">Cascada: ${percentages.waterfall}%</div>
                 </div>
 
                 <button class="btn btn-primary px-5" onclick="location.reload()">Reiniciar Encuesta</button>
@@ -163,7 +177,7 @@
 
     $('#next-btn').onclick = () => {
         if (userAnswers[currentStep] === undefined) {
-            alert('Por favor, selecciona una opción antes de continuar.');
+            $('#step-error').textContent = 'Elegí una opción para continuar.';
             return;
         }
 

@@ -1,20 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const filterDropdown = document.getElementById('hc-filter');
+    const dropdown = document.getElementById('hc-filter');
     const toolCards = document.querySelectorAll('.hc-card:not(.hc-card-guia)');
+    if (!dropdown) return;
 
-    if (!filterDropdown) return;
-
-    filterDropdown.addEventListener('change', (e) => {
-        const selectedCategory = e.target.value;
-
+    const apply = category => {
         toolCards.forEach(card => {
-            const category = card.getAttribute('data-category');
+            const show = category === 'all' || card.dataset.category === category;
+            card.classList.toggle('hc-hidden', !show);
+        });
+    };
 
-            if (selectedCategory === 'all' || category === selectedCategory) {
-                card.classList.remove('hc-hidden');
-            } else {
-                card.classList.add('hc-hidden');
-            }
+    dropdown.addEventListener('change', e => apply(e.target.value));
+
+    // Los enlaces "Ver solo ..." de cada tarjeta aplican el mismo filtro
+    document.querySelectorAll('.hc-link[data-filter]').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            dropdown.value = link.dataset.filter;
+            apply(dropdown.value);
+            const top = document.getElementById('tipos');
+            if (top) top.scrollIntoView({ behavior: 'smooth' });
         });
     });
 });
