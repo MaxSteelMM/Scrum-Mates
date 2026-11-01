@@ -28,6 +28,10 @@
     transition: transform 0.3s ease;
 }
 
+.profile-img--maximo {
+    object-position: center 15%;
+}
+
 .profile-card:hover .profile-img {
     transform: scale(1.1);
 }

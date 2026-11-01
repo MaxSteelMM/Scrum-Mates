@@ -83,31 +83,37 @@
             const team = [
                 {
                     name: 'Nicolas Burdiles',
+                    img: '../Img/Integrantes/Nicolas Burdiles.png',
                     role: 'Scrum Master',
                     institution: 'Epet 20',
                     motivation: 'Impulsar la agilidad para crear productos que realmente aporten valor al usuario.'
                 },
                 {
                     name: 'Maximo Maroa',
+                    img: '../Img/Integrantes/Maximo Maroa.png',
+                    imgClass: 'profile-img--maximo',
                     role: 'Programador',
                     institution: 'Epet 20',
                     motivation: 'Construir código limpio y eficiente que sea la base de un software robusto.'
                 },
                 {
                     name: 'Ramiro Flores',
+                    img: '../Img/Integrantes/Ramiro Flores.png',
                     role: 'Diseñador',
                     institution: 'Epet 20',
                     motivation: 'Crear experiencias de usuario intuitivas que simplifiquen la complejidad técnica.'
                 },
                 {
                     name: 'Luca Kletzel',
+                    img: '../Img/Integrantes/Luca Kletzel.png',
                     role: 'Tester',
                     institution: 'Epet 20',
                     motivation: 'Garantizar la excelencia técnica eliminando errores antes de que lleguen al cliente.'
                 },
                 {
                     name: 'Lionel Centurion',
-                    role: 'Marketing',
+                    img: '../Img/Integrantes/Lionel Centurion.png',
+                    role: 'Marketing y Comodin',
                     institution: 'Epet 20',
                     motivation: 'Dar a conocer el proyecto y acercar la calidad del software a quienes más lo necesitan.'
                 }
@@ -126,7 +132,7 @@
                     <div class="team-item">
                         <div class="card profile-card h-100 text-center p-4">
                             <div class="profile-img-container">
-                                <img src="${member.img || avatar(member.name)}" alt="${member.name}" class="profile-img">
+                                <img src="${member.img || avatar(member.name)}" alt="${member.name}" class="profile-img ${member.imgClass || ''}">
                             </div>
                             <h5 class="fw-bold mb-1">${member.name}</h5>
                             <span class="profile-role">${member.role}</span>
